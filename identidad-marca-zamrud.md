@@ -28,8 +28,14 @@ Al no existir una sola cara visible, el mito no puede depender de carisma person
 
 Esto también resuelve el reto de multiplataforma sin necesitar una cara única sosteniéndolo todo: TikTok puede llevar los símbolos y el gancho (cuervos, frío, "2600 msnm", frases-lema), YouTube puede llevar el detrás de cámaras y el proceso real de "extracción" (grabación, producción, mezcla — la prueba de legitimidad ante el padre), e Instagram sigue siendo la vitrina curada del universo completo. Mismo mito, tres profundidades distintas.
 
+## El vocabulario del mito, ya definido
+
+La comunidad tiene nombre: **La Bandada**. Funciona porque no fuerza la metáfora — un grupo de cuervos ya se llama así en el lenguaje común, así que el término no necesita explicación la primera vez que alguien lo escucha, y aun así es exclusivamente de Zamrud. Quien sigue la cuenta no es "un seguidor", es alguien que puede llegar a ser parte de la Bandada.
+
+El proceso tiene verbo: **minar**. No "bajar a la mina" — minar, directo, en la línea de "minar una piedra preciosa", con el eco casi inevitable a Minecraft para la audiencia joven, lo cual es una ventaja y no un problema: un verbo que ya tienen instalado en la cabeza desde otro contexto, reciclado para el propio. Un cantante en desarrollo "está minando su voz". Un trailer "es una veta que se acaba de abrir". El paquete "artista por un día" — cuando llegue el momento de nombrarlo con este mismo lenguaje — es la sesión donde alguien mina su propia esmeralda por primera vez con el equipo completo de Zamrud detrás.
+
+Con esos dos términos fijos, el resto del vocabulario se deriva solo: se mina en la mina, se sale con una piedra, se entra a la Bandada, los cuervos son quienes ya minaron la suya. Ya no hace falta inventar el sistema — hace falta empezar a usarlo en el contenido, en las bios, en los captions, hasta que el público lo repita sin que se lo expliquen.
+
 ## Lo que falta construir antes de la siguiente publicación
 
-No es una lista de tareas, es una decisión: hace falta nombrar la comunidad y el sistema de símbolos antes de seguir publicando, porque en este momento cada trailer es huérfano de nombre. ¿Cómo se llaman quienes están dentro — "La Bandada", "Los Cuervos de Zamrud"? ¿Cómo se llama el proceso de convertirse en talento de Zamrud — la "bajada a la mina", la "cacería"? Ese vocabulario es lo que convierte seguidores en comunidad y comunidad en compradores, porque la gente no se une a una marca: se une a una identidad de la que puede hablar con sus propias palabras.
-
-Esa es la tarea de identidad ahora mismo: nombrar el mito, fijar sus reglas visuales (negro, frío, gótico-urbano, nunca trópico ni "flow" genérico), y usar ese filtro para reinterpretar incluso lo que ya existe. Los seis trailers actuales no necesitan desaparecer — necesitan ser reencuadrados como los primeros capítulos de esta mitología.
+Con el vocabulario resuelto, lo que falta ya no es de identidad sino de ejecución: fijar las reglas visuales (negro, frío, gótico-urbano, nunca trópico ni "flow" genérico) y usar el filtro del mito para reinterpretar lo que ya existe. Los seis trailers actuales no necesitan desaparecer — necesitan ser reencuadrados como los primeros capítulos de esta mitología, y sus descripciones y captions pueden empezar a usar "Bandada" y "minar" desde ya, sin esperar a una pieza nueva.
