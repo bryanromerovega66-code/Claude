@@ -85,6 +85,30 @@ Hasta acá "minar" vive como metáfora — en el lenguaje, en las portadas, en e
 
 **Por qué esto no exige más presupuesto.** Todo el "registro de la mina" se resuelve con material que ya se filma el día de rodaje del lanzamiento (mismos planos hero, misma modelo, mismo combo de cámaras) más 10-15 minutos extra ese mismo día para grabar en lote los inserts del objeto numerado con distintos números/estados — nunca una jornada de rodaje aparte. Lo único nuevo que hay que producir por lanzamiento es el objeto físico de utilería (barato y reutilizable en su forma, solo cambia el número o el estado), igual que ya se hace con la esquirla de esmeralda de los guiones.
 
+## El feed como mitología visible: bloques de tres portadas por capítulo
+
+Hasta ahora cada pieza se ha diseñado para funcionar sola. Falta la capa que las conecta: el perfil de Instagram visto como cuadrícula, no como lista de publicaciones sueltas. La regla desde ahora es que cada canción, capítulo o lanzamiento ocupa un bloque fijo de **tres publicaciones** (seis cuando el tema necesite más desarrollo narrativo) — y ese bloque se diseña para que, sin que nadie toque play, las tres miniaturas ya cuenten algo de la historia con solo verlas al hacer scroll por el perfil. Las portadas dejan de ser un detalle de cada pieza y pasan a ser el mensaje principal del feed como objeto completo.
+
+**Mecánica de la cuadrícula — por qué el orden de publicación no es el orden de lectura.** Instagram coloca lo más reciente arriba a la izquierda: dentro de una fila de tres, la publicación más nueva queda más a la izquierda y la más vieja más a la derecha. Eso significa que para que un bloque se lea de izquierda a derecha como "making of → video → portada", hay que publicarlo en **orden inverso**: primero la portada/reveal, después el video narrativo, y al final el making of — así, cuando el bloque quede fijo en la cuadrícula (empujado por el siguiente lanzamiento), se lee en el orden correcto sin que el público note la mecánica.
+
+**Los tres roles dentro de cada bloque, siempre en este orden de publicación:**
+
+1. **Portada / reveal (se publica primero).** Es el gancho gráfico — el mismo sistema del mito felino ya definido (silueta o grafismo sobre fotografía real, acento único en esmeralda, tratamiento roto para el tigre) resuelto como un Reel corto con dos momentos: abre con el felino del roster que corresponda enfrentando o sacando al tigre, y corta al protagonista rapeando — siempre con el rostro cubierto, igual que el resto de la identidad, nunca una excepción de cara visible. Esta es la pieza que más se diseña como miniatura, porque es la que fija la primera impresión del bloque en el feed.
+2. **Video narrativo (se publica segundo).** La pieza de actuación y guion — 60 a 90 segundos, la dirección ya establecida para el rodaje (contraluz, plano de escala, entrada en cámara lenta, técnica de las tres cámaras ya definida). Es el cuerpo del capítulo, donde se cuenta la búsqueda o el conflicto en sí.
+3. **Making of (se publica tercero, queda como la más reciente y más a la izquierda).** Detrás de cámaras del mismo rodaje — mismo formato Reel, no carrusel de fotos, para que la cuadrícula se mantenga uniforme en tipo de contenido. Es la prueba de legitimad ya identificada como clave, y la pieza que cierra el bloque hacia adelante en el feed.
+
+**Bloques de seis — mismo sistema, dos movimientos.** Cuando un lanzamiento necesita más desarrollo (por ejemplo, un capítulo con un conflicto más largo, o el cierre de temporada de la cacería), el bloque se duplica en dos sub-bloques de tres consecutivos en vez de inventar una estructura nueva: el primero plantea el misterio (portada, video, making of), el segundo resuelve (portada, video, making of). Cada sub-bloque conserva la misma regla de publicación en orden inverso.
+
+### Aplicado al Génesis: el primer bloque de tres
+
+Con el rodaje de la terraza ya guionado, este es el primer bloque real del feed, y se publica en este orden:
+
+1. **Publicación 1 — Portada/reveal.** Puma (la guía, ya asignada en el roster) aparece como silueta o sombra sacando al tigre de cuadro — el mismo tratamiento roto ya definido para el impostor — y el Reel corta a Jaguar (el protagonista) rapeando, enmascarado, a contraluz con la técnica Sony/The Crow ya establecida. Esta es la miniatura más trabajada del bloque: la primera cara del perfil cuando alguien haga scroll.
+2. **Publicación 2 — Video narrativo.** La pieza de 60-90 segundos ya dirigida en este documento (protagonista buscando la esmeralda en la terraza, la guía vigilando desde otro plano, cierre con la carta BOGOTHAM). Reutiliza directamente el material de la Fase 2 — Cine ya planeada, sin rodaje adicional.
+3. **Publicación 3 — Making of.** Reel corto del mismo día de rodaje: vestuario, cámaras (Osmo 360, Sony, Action 6) en set, el gel de luz o reflector improvisado, algún blooper o pausa entre tomas. Es la pieza más barata de producir del bloque porque se arma con material que de cualquier forma se genera en set.
+
+La pieza corta de 6-10 segundos (Fase 1 — El aviso) no ocupa un cuarto slot: se usa como teaser en Historias antes de que el bloque completo llegue al feed, no como publicación de la cuadrícula.
+
 ## Dirección concreta para la pieza de la terraza
 
 El protagonista va con rostro cubierto — balaclava o máscara tipo cuervo, coherente con la decisión ya tomada de que la marca no depende de una sola cara — vestido en drill UK, todo en una sola gama de color (negro sobre negro, o negro con un único detalle en el verde esmeralda de marca, nunca varios colores compitiendo). La pose es de vigía, no de acción: de pie o en cuclillas al borde de la terraza, mirando hacia abajo o al horizonte, quieto — el movimiento lo aportan la cámara y el viento en la tela, no el actor.
