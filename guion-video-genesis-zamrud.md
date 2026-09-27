@@ -13,7 +13,7 @@ Es el cuerpo del bloque fijado — el video en sí, con guion y actuación real.
 > **Protagonista:** "Hay muchas. Pero están bien escondidas."
 
 **0:12–0:28 — el giro sigue, los dos todavía en cuadro; ella no se mueve de su punto, es él quien avanza con el giro.**
-> **Modelo:** "No sos el único cavando esta ciudad. Hay otros que se mueven de noche, callados, como murciélagos — buscando lo mismo que vos. No bajes la guardia."
+> **Modelo:** "Usted no es el único cavando esta ciudad. Hay otros que se mueven de noche, callados, como murciélagos — buscando lo mismo que usted. No baje la guardia."
 
 **0:28–0:48 — el giro se aleja de ella, que queda quieta y fuera de cuadro; de acá en adelante el protagonista habla solo.**
 > **Protagonista:** "Yo sé que no soy el primero que sube aquí a mirar así. Y no voy a ser el último. Pero no estoy buscando likes, ni vistas. Estoy tratando de minar esta ciudad de verdad."

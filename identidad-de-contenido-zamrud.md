@@ -18,6 +18,8 @@
 
 **Todo el vocabulario ya definido se usa en el copy, no solo en el video.** Bio de Instagram, descripciones, captions — "Bandada", "minar", "Bogotham" deben aparecer ahí antes de aparecer bien establecidos en video, porque así la audiencia los encuentra escritos, los busca, y se vuelven searchable.
 
+**El léxico de todo diálogo es colombiano, específicamente bogotano — nunca de otro país.** Nada de voseo argentino ni modismos rioplatenses ("vos", "sos", "qué querés", "boludo") — el registro por defecto entre personajes es el "usted" bogotano, que en Bogotá se usa incluso en momentos íntimos o tensos, no solo formales, y es exactamente el tono seco y grave que ya define a la marca. La jerga colombiana (parce, parcero, verraco, no joda, de una, toca, vaina, quihubo) se usa con moderación para dar autenticidad, nunca en exceso ni de forma caricaturesca — el objetivo es que suene a alguien real de la ciudad, no a un estereotipo. Cualquier guion que se escriba de acá en adelante se revisa contra esta regla antes de grabarse.
+
 ## Referencias de cine y series, y cómo robarles técnica sin presupuesto
 
 Ninguna de estas referencias se elige por el género de la película — se eligen por una técnica puntual, barata de replicar, que ya hace la mitología de Zamrud más creíble en cámara.
