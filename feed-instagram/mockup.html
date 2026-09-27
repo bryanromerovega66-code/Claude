@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Feed Zamrud</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #0a0c10; font-family: "Liberation Sans", "DejaVu Sans", sans-serif; color: #f2f3f5; }
+  .board { display: flex; width: 1860px; padding: 60px; gap: 70px; background: radial-gradient(1200px 900px at 80% 10%, #10241b 0%, #0a0c10 60%); }
+
+  /* ---------- Teléfono ---------- */
+  .phone { width: 900px; background: #0c1014; border-radius: 48px; overflow: hidden; box-shadow: 0 0 0 10px #1c1f24, 0 0 0 12px #2c3036, 0 40px 120px rgba(0,0,0,.7); flex: none; }
+  .status { height: 80px; display: flex; align-items: center; justify-content: space-between; padding: 0 36px; font-size: 30px; }
+  .topbar { height: 95px; display: flex; align-items: center; padding: 0 30px; gap: 20px; }
+  .topbar .user { flex: 1; text-align: center; font-size: 40px; font-weight: 700; display: flex; justify-content: center; align-items: center; gap: 14px; }
+  .dot { width: 16px; height: 16px; border-radius: 50%; background: #ff3040; display: inline-block; }
+  .head { display: flex; padding: 14px 30px 0 48px; gap: 50px; align-items: center; }
+  .avatar { width: 152px; height: 152px; border-radius: 50%; background: url(perfil-actual.png) -49px -224px / 900px 2000px; position: relative; flex: none; }
+  .avatar .plus { position: absolute; right: -2px; bottom: 4px; width: 40px; height: 40px; border-radius: 50%; background: #fff; color: #000; border: 4px solid #0c1014; font-size: 30px; line-height: 30px; text-align: center; font-weight: 700; }
+  .name { font-size: 28px; font-weight: 600; margin-bottom: 18px; }
+  .stats { display: flex; gap: 90px; font-size: 29px; line-height: 1.35; }
+  .stats b { display: block; font-size: 32px; }
+  .bio { padding: 26px 34px 0; font-size: 28px; line-height: 1.38; }
+  .link { color: #a3b8ff; font-weight: 600; margin-top: 6px; }
+  .chips { display: flex; gap: 16px; padding: 18px 34px 0; }
+  .chip { border: 1.5px solid #30343a; border-radius: 30px; padding: 12px 20px; font-size: 24px; font-weight: 600; white-space: nowrap; overflow: hidden; }
+  .dash { margin: 26px 25px 0; background: #25292e; border-radius: 16px; padding: 24px 30px; }
+  .dash b { font-size: 28px; } .dash p { font-size: 24px; color: #a8adb4; margin-top: 6px; }
+  .btns { display: flex; gap: 12px; padding: 20px 25px 0; }
+  .btn { flex: 1; background: #25292e; border-radius: 14px; height: 66px; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 600; }
+  .btn.sq { flex: none; width: 66px; }
+  .tabs { display: flex; margin-top: 44px; border-bottom: 1px solid #22262b; }
+  .tab { flex: 1; height: 90px; display: flex; align-items: center; justify-content: center; }
+  .tab.on { border-bottom: 4px solid #f2f3f5; }
+  .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3px; }
+  .tile { position: relative; aspect-ratio: 3 / 4; overflow: hidden; background: #111; }
+  .tile svg.art { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+  .tile::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(0,0,0,0) 80%, rgba(0,0,0,.35)); pointer-events: none; }
+  .tile .reel, .tile .views { z-index: 1; }
+  .tile svg.art text[x="16"] { paint-order: stroke; stroke: rgba(0,0,0,.6); stroke-width: 3.5px; stroke-linejoin: round; }
+  .tile .reel { position: absolute; top: 16px; right: 16px; }
+  .tile .views { position: absolute; left: 16px; bottom: 14px; font-size: 24px; font-weight: 700; display: flex; align-items: center; gap: 8px; text-shadow: 0 1px 4px rgba(0,0,0,.8); }
+  .nav { height: 130px; display: flex; align-items: center; justify-content: space-around; padding: 0 20px; border-top: 1px solid #1a1d21; }
+  .navav { width: 62px; height: 62px; border-radius: 50%; border: 3px solid #fff; background: url(perfil-actual.png) -783px -1873px / 900px 2000px; }
+  .home { width: 250px; height: 8px; background: #d0d0d0; border-radius: 4px; margin: 0 auto 26px; }
+
+  /* ---------- Panel explicativo ---------- */
+  .panel { flex: 1; display: flex; flex-direction: column; }
+  .kicker { color: #2fd27a; font-size: 26px; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; }
+  .panel h1 { font-size: 64px; line-height: 1.08; margin: 18px 0 26px; }
+  .panel h1 span { color: #2fd27a; }
+  .lead { font-size: 29px; line-height: 1.45; color: #c4c9cf; }
+  .rule { margin-top: 40px; background: #141a17; border: 1px solid #1f3a2c; border-radius: 22px; padding: 30px 34px; font-size: 27px; line-height: 1.45; color: #d7dde2; }
+  .rule b { color: #fff; }
+  .rows { position: relative; flex: 1; }
+  .series { position: absolute; left: 0; right: 0; display: flex; gap: 30px; align-items: center; }
+  .bracket { width: 26px; align-self: stretch; border: 4px solid; border-left: none; border-radius: 0 18px 18px 0; flex: none; }
+  .series .num { font-size: 22px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; }
+  .series h2 { font-size: 44px; margin: 8px 0 12px; }
+  .series p { font-size: 26px; line-height: 1.42; color: #c4c9cf; }
+  .foot { font-size: 22px; color: #7c838b; line-height: 1.5; }
+</style>
+</head>
+<body>
+
+<!-- Filtros compartidos -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="4" result="n"/>
+      <feColorMatrix in="n" type="saturate" values="0" result="g"/>
+      <feComponentTransfer in="g" result="g2"><feFuncA type="linear" slope="0.22"/></feComponentTransfer>
+      <feBlend in="SourceGraphic" in2="g2" mode="overlay"/>
+    </filter>
+    <filter id="soft"><feGaussianBlur stdDeviation="0.8"/></filter>
+    <filter id="blur3"><feGaussianBlur stdDeviation="3"/></filter>
+    <filter id="blur8"><feGaussianBlur stdDeviation="8"/></filter>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="6" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="concrete" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.035 0.6" numOctaves="3" seed="8"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0.35 0"/>
+      <feComposite in2="SourceGraphic" operator="in"/>
+    </filter>
+    <symbol id="reel" viewBox="0 0 40 40">
+      <rect x="3" y="3" width="34" height="34" rx="9" fill="#fff"/>
+      <path d="M16 13 L28 20 L16 27 Z" fill="#000"/>
+    </symbol>
+    <symbol id="eye" viewBox="0 0 24 24">
+      <path d="M2 14 C6 6 18 6 22 14" fill="none" stroke="#fff" stroke-width="2.4"/>
+      <circle cx="12" cy="15" r="4" fill="#fff"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="board">
+
+<div class="phone" id="phone">
+  <div class="status"><span>9:41</span><span>5G &nbsp;▮ 76%</span></div>
+  <div class="topbar">
+    <svg width="46" height="46" viewBox="0 0 24 24"><path d="M12 3v18M3 12h18" stroke="#fff" stroke-width="2.2"/></svg>
+    <div class="user">zamrudcol <svg width="26" height="26" viewBox="0 0 24 24"><path d="M5 9l7 7 7-7" fill="none" stroke="#fff" stroke-width="2.6"/></svg><span class="dot"></span></div>
+    <svg width="50" height="50" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="#fff" stroke-width="2"/><path d="M15.5 10.5c-.5-2.5-4.5-2.8-5.5-.3-.8 2 .6 3.8 3 3.5 2.6-.3 2.6-3.3 1-3.2" fill="none" stroke="#fff" stroke-width="1.6"/></svg>
+    <svg width="50" height="50" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke="#fff" stroke-width="2"/></svg>
+  </div>
+
+  <div class="head">
+    <div class="avatar"><div class="plus">+</div></div>
+    <div>
+      <div class="name">Zamrud Colombia</div>
+      <div class="stats"><div><b>14</b>posts</div><div><b>151</b>followers</div><div><b>88</b>following</div></div>
+    </div>
+  </div>
+  <div class="bio">Desarrolldora de proyectos audiovisuales l Distribución l Promovemos arte en Colombia
+    <div class="link">🔗 zamrudcol.co</div></div>
+  <div class="chips"><div class="chip">▷ Crema LATINA (feat. Rovvi &amp; Keni66) Zamr…</div><div class="chip">+ Add</div></div>
+  <div class="dash"><b>Professional dashboard</b><p>147 views in the last 30 days.</p></div>
+  <div class="btns"><div class="btn">Edit profile</div><div class="btn">Share profile</div><div class="btn">Contact</div><div class="btn sq">⌄</div></div>
+
+  <div class="tabs">
+    <div class="tab on"><svg width="44" height="44" viewBox="0 0 30 30"><g fill="#fff"><rect x="1" y="1" width="8" height="8" rx="1.5"/><rect x="11" y="1" width="8" height="8" rx="1.5"/><rect x="21" y="1" width="8" height="8" rx="1.5"/><rect x="1" y="11" width="8" height="8" rx="1.5"/><rect x="11" y="11" width="8" height="8" rx="1.5"/><rect x="21" y="11" width="8" height="8" rx="1.5"/><rect x="1" y="21" width="8" height="8" rx="1.5"/><rect x="11" y="21" width="8" height="8" rx="1.5"/><rect x="21" y="21" width="8" height="8" rx="1.5"/></g></svg></div>
+    <div class="tab"><svg width="48" height="48" viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="5" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M10 8.5l5.5 3.5-5.5 3.5z" fill="none" stroke="#fff" stroke-width="1.8"/></svg></div>
+    <div class="tab"><svg width="48" height="48" viewBox="0 0 24 24"><path d="M5 10V8a3 3 0 0 1 3-3h10M15 2l3 3-3 3M19 14v2a3 3 0 0 1-3 3H6M9 22l-3-3 3-3" fill="none" stroke="#fff" stroke-width="1.8"/></svg></div>
+    <div class="tab"><svg width="48" height="48" viewBox="0 0 24 24"><rect x="2.5" y="4.5" width="19" height="17" rx="4" fill="none" stroke="#fff" stroke-width="1.8"/><circle cx="12" cy="11" r="3" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M6.5 20c1-3 3-4 5.5-4s4.5 1 5.5 4M9 4.5l1-2h4l1 2" fill="none" stroke="#fff" stroke-width="1.8"/></svg></div>
+  </div>
+
+  <div class="grid">
+
+    <!-- ================= SERIE 1 · FELINOS (anime) ================= -->
+
+    <!-- 1. Pantera + chica anime -->
+    <div class="tile">
+      <svg class="art" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="a1bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b1030"/><stop offset="1" stop-color="#05060d"/></linearGradient>
+          <linearGradient id="a1skin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6d2b8"/><stop offset="1" stop-color="#d69a7c"/></linearGradient>
+          <linearGradient id="a1suit" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#090910"/><stop offset=".7" stop-color="#171727"/><stop offset="1" stop-color="#3a3a5a"/></linearGradient>
+        </defs>
+        <rect width="300" height="400" fill="url(#a1bg)"/>
+        <circle cx="230" cy="110" r="120" fill="#4b1f6e" opacity=".35" filter="url(#blur8)"/>
+        <!-- pantera -->
+        <g>
+          <path d="M-30 400 L-30 160 C-20 120 10 100 40 96 L30 30 L85 78 C110 70 135 72 150 80 L200 36 L190 110 C205 135 205 175 190 205 C175 240 140 262 118 300 L110 400 Z" fill="#07070b"/>
+          <path d="M200 36 L190 110 C205 135 205 175 190 205 C175 240 140 262 118 300" fill="none" stroke="#ff4fd8" stroke-width="2.2" opacity=".85"/>
+          <path d="M30 30 L85 78" stroke="#7d5cff" stroke-width="1.5" opacity=".6"/>
+          <!-- ojos -->
+          <path d="M58 150 Q80 128 106 146 Q84 162 58 150 Z" fill="#e8f25a"/>
+          <path d="M132 142 Q156 124 178 142 Q156 158 132 142 Z" fill="#e8f25a"/>
+          <ellipse cx="82" cy="147" rx="3.5" ry="10" fill="#000"/><ellipse cx="155" cy="141" rx="3.5" ry="10" fill="#000"/>
+          <circle cx="88" cy="142" r="2" fill="#fff"/><circle cx="161" cy="136" r="2" fill="#fff"/>
+          <path d="M112 186 L128 184 L120 196 Z" fill="#2b2230"/>
+          <g stroke="#cfd0ff" stroke-width=".9" opacity=".75" fill="none">
+            <path d="M104 198 Q60 196 20 206"/><path d="M104 203 Q64 210 28 226"/>
+            <path d="M136 196 Q176 190 214 196"/><path d="M136 201 Q172 204 206 216"/>
+          </g>
+        </g>
+        <!-- chica anime -->
+        <g>
+          <path d="M150 400 C150 330 175 300 215 292 L262 292 C300 300 318 340 320 400 Z" fill="url(#a1suit)"/>
+          <path d="M215 292 C190 300 170 330 162 400" fill="none" stroke="#35e8ff" stroke-width="1.6" opacity=".8"/>
+          <path d="M262 292 C290 300 305 330 310 400" fill="none" stroke="#ff4fd8" stroke-width="1.8" opacity=".85"/>
+          <path d="M226 256 L226 296 L252 296 L252 256 Z" fill="url(#a1skin)"/>
+          <rect x="224" y="278" width="30" height="7" fill="#101018"/>
+          <circle cx="239" cy="286" r="3" fill="#35e8ff"/>
+          <path d="M200 190 C200 150 220 138 240 138 C262 138 280 152 280 190 C280 225 262 262 240 266 C218 262 200 228 200 190 Z" fill="url(#a1skin)"/>
+          <!-- pelo bob -->
+          <path d="M188 214 C180 160 204 118 244 118 C284 118 300 158 294 214 L282 240 C282 212 280 190 272 176 C254 182 228 176 214 160 C212 186 206 210 200 240 Z" fill="#0b0c16"/>
+          <path d="M214 160 C226 170 246 176 272 176" fill="none" stroke="#5b6bff" stroke-width="2" opacity=".6"/>
+          <path d="M226 128 C244 124 262 128 276 140" fill="none" stroke="#8fa0ff" stroke-width="2.5" opacity=".7"/>
+          <!-- ojos -->
+          <path d="M214 198 Q226 188 238 196" fill="none" stroke="#111" stroke-width="3"/>
+          <path d="M248 196 Q260 188 272 198" fill="none" stroke="#111" stroke-width="3"/>
+          <ellipse cx="227" cy="201" rx="6" ry="5" fill="#6a3b1f"/><ellipse cx="260" cy="201" rx="6" ry="5" fill="#6a3b1f"/>
+          <circle cx="229" cy="199" r="1.6" fill="#fff"/><circle cx="262" cy="199" r="1.6" fill="#fff"/>
+          <path d="M244 214 L241 226 L246 226" fill="none" stroke="#b77a60" stroke-width="1.4"/>
+          <path d="M234 240 Q244 246 254 240" fill="none" stroke="#b0303f" stroke-width="3" stroke-linecap="round"/>
+          <path d="M270 150 C282 170 286 196 282 240" fill="none" stroke="#ff4fd8" stroke-width="1.5" opacity=".8"/>
+        </g>
+        <!-- título de serie -->
+        <rect x="0" y="0" width="300" height="400" fill="url(#a1bg)" opacity="0"/>
+        <text x="16" y="44" font-family="DejaVu Sans" font-weight="bold" font-size="22" fill="#fff" letter-spacing="3">FELINOS</text>
+        <text x="16" y="66" font-family="DejaVu Sans" font-size="13" fill="#ff8be6" letter-spacing="2">EP. 01</text>
+      </svg>
+      <svg class="reel" width="40" height="40"><use href="#reel"/></svg>
+      <div class="views"><svg width="26" height="26"><use href="#eye"/></svg>48.2K</div>
+    </div>
+
+    <!-- 2. Silueta felina en la oscuridad -->
+    <div class="tile">
+      <svg class="art" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <radialGradient id="a2bg" cx=".5" cy=".45" r=".7"><stop offset="0" stop-color="#1a0508"/><stop offset=".6" stop-color="#050203"/><stop offset="1" stop-color="#000"/></radialGradient>
+          <radialGradient id="a2mouth" cx=".5" cy=".4" r=".6"><stop offset="0" stop-color="#ff2a3a"/><stop offset="1" stop-color="#3a0006"/></radialGradient>
+        </defs>
+        <rect width="300" height="400" fill="url(#a2bg)"/>
+        <!-- silueta cabeza -->
+        <path d="M40 330 C30 260 40 200 70 170 L62 110 L110 145 C130 138 170 138 190 145 L238 110 L230 170 C260 200 270 260 260 330 C240 370 200 390 150 390 C100 390 60 370 40 330 Z" fill="#0c0708"/>
+        <path d="M62 110 L110 145 M238 110 L230 170" stroke="#3a0a10" stroke-width="2" fill="none"/>
+        <!-- ojos rojos -->
+        <g filter="url(#glow)">
+          <path d="M88 212 Q108 194 128 210 Q108 222 88 212 Z" fill="#ff1f33"/>
+          <path d="M172 210 Q192 194 212 212 Q192 222 172 210 Z" fill="#ff1f33"/>
+        </g>
+        <ellipse cx="108" cy="210" rx="2.5" ry="7" fill="#200"/><ellipse cx="192" cy="210" rx="2.5" ry="7" fill="#200"/>
+        <!-- boca con colmillos -->
+        <path d="M100 290 Q150 270 200 290 Q196 345 150 352 Q104 345 100 290 Z" fill="url(#a2mouth)" filter="url(#glow)" opacity=".9"/>
+        <path d="M100 290 Q150 270 200 290 Q196 345 150 352 Q104 345 100 290 Z" fill="#12040a" opacity=".55"/>
+        <g fill="#ffd9dd" filter="url(#glow)">
+          <path d="M112 290 L122 322 L130 286 Z"/><path d="M170 286 L178 322 L188 290 Z"/>
+          <path d="M126 346 L132 326 L138 348 Z"/><path d="M162 348 L168 326 L174 346 Z"/>
+        </g>
+        <text x="16" y="44" font-family="DejaVu Sans" font-weight="bold" font-size="22" fill="#fff" letter-spacing="3">FELINOS</text>
+        <text x="16" y="66" font-family="DejaVu Sans" font-size="13" fill="#ff8be6" letter-spacing="2">EP. 02</text>
+      </svg>
+      <svg class="reel" width="40" height="40"><use href="#reel"/></svg>
+      <div class="views"><svg width="26" height="26"><use href="#eye"/></svg>31.7K</div>
+    </div>
+
+    <!-- 3. Jaguar esmeralda sobre Bogotá (nueva) -->
+    <div class="tile">
+      <svg class="art" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="a3sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#140a2e"/><stop offset=".55" stop-color="#2a1b5c"/><stop offset="1" stop-color="#0d3b3a"/></linearGradient>
+          <radialGradient id="a3moon"><stop offset="0" stop-color="#fff8e8"/><stop offset=".7" stop-color="#f3e6c4"/><stop offset="1" stop-color="#e2cf9c"/></radialGradient>
+        </defs>
+        <rect width="300" height="400" fill="url(#a3sky)"/>
+        <g fill="#fff" opacity=".8"><circle cx="30" cy="90" r="1.2"/><circle cx="80" cy="40" r="1"/><circle cx="260" cy="60" r="1.3"/><circle cx="130" cy="110" r=".9"/><circle cx="280" cy="150" r="1"/><circle cx="20" cy="170" r=".9"/></g>
+        <circle cx="200" cy="140" r="90" fill="#f3e6c4" opacity=".18" filter="url(#blur8)"/>
+        <circle cx="200" cy="140" r="64" fill="url(#a3moon)"/>
+        <circle cx="222" cy="120" r="9" fill="#e0cf9f" opacity=".7"/><circle cx="182" cy="160" r="6" fill="#e0cf9f" opacity=".7"/>
+        <!-- cerros orientales + Monserrate -->
+        <path d="M0 290 L40 250 L80 262 L130 220 L170 244 L215 208 L260 236 L300 222 L300 320 L0 320 Z" fill="#12173a"/>
+        <rect x="211" y="196" width="8" height="12" fill="#12173a"/><path d="M209 196 L215 188 L221 196 Z" fill="#12173a"/>
+        <circle cx="215" cy="200" r="1.5" fill="#ffd36b"/>
+        <!-- ciudad -->
+        <g fill="#080a1c">
+          <rect x="0" y="300" width="300" height="100"/>
+          <rect x="10" y="270" width="26" height="40"/><rect x="40" y="250" width="20" height="60"/><rect x="64" y="280" width="30" height="30"/>
+          <rect x="190" y="262" width="22" height="48"/><rect x="216" y="240" width="18" height="70"/><rect x="238" y="276" width="30" height="34"/><rect x="272" y="258" width="22" height="52"/>
+        </g>
+        <g fill="#ffd36b" opacity=".75"><rect x="45" y="260" width="3" height="4"/><rect x="52" y="274" width="3" height="4"/><rect x="220" y="252" width="3" height="4"/><rect x="226" y="268" width="3" height="4"/><rect x="278" y="270" width="3" height="4"/><rect x="16" y="284" width="3" height="4"/></g>
+        <!-- jaguar sentado de perfil en azotea -->
+        <g>
+          <rect x="95" y="330" width="120" height="70" fill="#05060f"/>
+          <path d="M112 332 C104 290 110 250 130 226 L126 200 C126 186 134 176 146 172 L144 158 L154 168 C160 166 168 166 174 168 L182 156 L184 174 C196 182 200 196 194 208 C188 214 178 214 170 212 C168 232 176 262 188 290 C196 308 196 324 190 332 Z" fill="#05060f"/>
+          <path d="M190 332 C220 330 236 316 232 298 C230 290 222 292 224 300 C226 312 214 320 196 322" fill="#05060f"/>
+          <path d="M182 156 L184 174 C196 182 200 196 194 208" fill="none" stroke="#2fd27a" stroke-width="1.4" opacity=".7"/>
+          <path d="M164 186 Q172 180 180 186 Q172 190 164 186 Z" fill="#2fd27a" filter="url(#glow)"/>
+          <ellipse cx="172" cy="186" rx="1.2" ry="3" fill="#021"/>
+          <g fill="#1b1f35" opacity=".9"><circle cx="138" cy="260" r="4"/><circle cx="150" cy="282" r="3.5"/><circle cx="132" cy="296" r="4"/><circle cx="160" cy="306" r="3"/><circle cx="146" cy="240" r="3"/></g>
+        </g>
+        <!-- esmeralda -->
+        <g transform="translate(250 360)" filter="url(#glow)"><path d="M-9 -12 L9 -12 L14 0 L0 14 L-14 0 Z" fill="#1fbf6a"/><path d="M-9 -12 L9 -12 L5 0 L-5 0 Z" fill="#7df0b0"/></g>
+        <text x="16" y="44" font-family="DejaVu Sans" font-weight="bold" font-size="22" fill="#fff" letter-spacing="3">FELINOS</text>
+        <text x="16" y="66" font-family="DejaVu Sans" font-size="13" fill="#ff8be6" letter-spacing="2">EP. 03</text>
+      </svg>
+      <svg class="reel" width="40" height="40"><use href="#reel"/></svg>
+      <div class="views"><svg width="26" height="26"><use href="#eye"/></svg>22.9K</div>
+    </div>
+
+    <!-- ================= SERIE 2 · SKATE (realista) ================= -->
+
+    <!-- 4. Ollie a contraluz en escaleras -->
+    <div class="tile">
+      <svg class="art" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="s1sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2b3c63"/><stop offset=".45" stop-color="#c9674a"/><stop offset=".7" stop-color="#f3b16b"/><stop offset="1" stop-color="#f7d49a"/></linearGradient>
+          <radialGradient id="s1sun"><stop offset="0" stop-color="#fffbe6"/><stop offset=".25" stop-color="#ffe3a0" stop-opacity=".9"/><stop offset="1" stop-color="#ffb35c" stop-opacity="0"/></radialGradient>
+          <linearGradient id="s1ground" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a2a2a"/><stop offset="1" stop-color="#0e0b0d"/></linearGradient>
+        </defs>
+        <g filter="url(#grain)">
+          <rect width="300" height="400" fill="url(#s1sky)"/>
+          <circle cx="170" cy="265" r="140" fill="url(#s1sun)"/>
+          <!-- edificios lejanos -->
+          <g fill="#6a4a4f" opacity=".55" filter="url(#blur3)"><rect x="0" y="230" width="40" height="80"/><rect x="44" y="212" width="30" height="100"/><rect x="230" y="220" width="36" height="90"/><rect x="268" y="200" width="40" height="110"/></g>
+          <!-- escaleras -->
+          <path d="M0 400 L0 320 L60 320 L60 332 L100 332 L100 344 L140 344 L140 356 L180 356 L180 368 L220 368 L220 380 L300 380 L300 400 Z" fill="url(#s1ground)"/>
+          <path d="M0 320 L60 320 M60 332 L100 332 M100 344 L140 344 M140 356 L180 356 M180 368 L220 368" stroke="#f5b575" stroke-width="1.2" opacity=".6"/>
+          <!-- baranda -->
+          <path d="M20 290 L240 350" stroke="#1a1214" stroke-width="4"/><path d="M40 296 L40 322 M130 320 L130 346 M220 345 L220 370" stroke="#1a1214" stroke-width="3"/>
+          <!-- skater en el aire -->
+          <g fill="#140d10" filter="url(#soft)">
+            <circle cx="152" cy="118" r="11"/>
+            <path d="M144 122 C150 116 162 118 166 122 L160 120 Z"/>
+            <path d="M140 130 C150 126 164 128 168 136 L172 172 C168 180 150 182 142 176 Z"/>
+            <path d="M144 134 C128 140 116 132 104 118 L100 122 C112 140 130 150 146 146 Z"/>
+            <path d="M166 136 C182 142 194 150 206 146 L208 152 C194 160 178 156 164 150 Z"/>
+            <path d="M146 172 C136 186 128 196 130 212 L140 214 C140 200 150 190 158 180 Z"/>
+            <path d="M166 172 C178 180 186 192 180 208 L170 206 C172 196 166 188 156 182 Z"/>
+            <!-- tabla -->
+            <path d="M112 214 L196 204 C200 204 202 208 198 210 L114 222 C110 222 108 216 112 214 Z"/>
+            <circle cx="126" cy="224" r="4"/><circle cx="184" cy="215" r="4"/>
+          </g>
+          <!-- sombra -->
+          <ellipse cx="160" cy="360" rx="40" ry="4" fill="#000" opacity=".35" filter="url(#blur3)"/>
+          <!-- lens flare -->
+          <circle cx="210" cy="190" r="10" fill="#fff4d0" opacity=".25"/><circle cx="240" cy="150" r="5" fill="#fff4d0" opacity=".25"/>
+        </g>
+        <text x="16" y="44" font-family="DejaVu Sans" font-weight="bold" font-size="22" fill="#fff" letter-spacing="3">SKATE</text>
+        <text x="16" y="66" font-family="DejaVu Sans" font-size="13" fill="#ffd28a" letter-spacing="2">EP. 01</text>
+      </svg>
+      <svg class="reel" width="40" height="40"><use href="#reel"/></svg>
+      <div class="views"><svg width="26" height="26"><use href="#eye"/></svg>12.4K</div>
+    </div>
+
+    <!-- 5. Bowl, toma desde abajo -->
+    <div class="tile">
+      <svg class="art" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="s2sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4f86c6"/><stop offset="1" stop-color="#c7def0"/></linearGradient>
+          <linearGradient id="s2bowl" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#b9b4ad"/><stop offset=".5" stop-color="#8e8983"/><stop offset="1" stop-color="#4a4744"/></linearGradient>
+          <linearGradient id="s2shade" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".45"/><stop offset=".5" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".3"/></linearGradient>
+        </defs>
+        <g filter="url(#grain)">
+          <rect width="300" height="400" fill="url(#s2sky)"/>
+          <g fill="#fff" opacity=".7" filter="url(#blur8)"><ellipse cx="60" cy="60" rx="60" ry="16"/><ellipse cx="240" cy="96" rx="50" ry="12"/></g>
+          <!-- árboles lejanos -->
+          <g fill="#2f4a33" filter="url(#blur3)"><ellipse cx="20" cy="178" rx="40" ry="26"/><ellipse cx="270" cy="170" rx="46" ry="30"/></g>
+          <!-- bowl -->
+          <path d="M-10 186 Q150 176 310 186 L310 400 L-10 400 Z" fill="url(#s2bowl)"/>
+          <path d="M-10 186 Q150 176 310 186 L310 400 L-10 400 Z" fill="#fff" filter="url(#concrete)" opacity=".6"/>
+          <path d="M-10 186 Q150 176 310 186 L310 400 L-10 400 Z" fill="url(#s2shade)"/>
+          <path d="M-10 186 Q150 176 310 186" stroke="#e6e2da" stroke-width="7" fill="none"/>
+          <path d="M-10 192 Q150 182 310 192" stroke="#5f5a55" stroke-width="2" fill="none"/>
+          <path d="M-10 290 Q150 250 310 290" stroke="#6f6a64" stroke-width="1" fill="none" opacity=".5"/>
+          <!-- skater en el coping (grind) -->
+          <g fill="#1d1a1c" filter="url(#soft)">
+            <path d="M118 184 L196 176 L198 182 L120 190 Z"/>
+            <circle cx="130" cy="191" r="3.5" fill="#d7d2c8"/><circle cx="186" cy="184" r="3.5" fill="#d7d2c8"/>
+            <path d="M134 180 C136 164 142 152 150 142 L162 146 C156 158 150 168 150 180 Z"/>
+            <path d="M178 176 C182 160 178 150 170 140 L160 142 C166 154 168 164 166 178 Z"/>
+            <path d="M146 144 C144 124 150 104 160 94 L176 98 C180 112 176 130 170 146 Z" fill="#b83a2e"/>
+            <path d="M150 104 C134 106 118 100 106 88 L102 94 C114 110 132 116 150 116 Z" fill="#b83a2e"/>
+            <path d="M174 104 C190 112 204 108 216 96 L220 102 C208 118 190 122 172 116 Z" fill="#b83a2e"/>
+            <circle cx="166" cy="82" r="11"/>
+            <path d="M155 78 C156 68 176 66 178 78 Z" fill="#2c3d5a"/>
+          </g>
+          <!-- polvo -->
+          <g fill="#e8dfd0" opacity=".5" filter="url(#blur3)"><circle cx="124" cy="194" r="6"/><circle cx="112" cy="196" r="4"/></g>
+        </g>
+        <text x="16" y="44" font-family="DejaVu Sans" font-weight="bold" font-size="22" fill="#fff" letter-spacing="3">SKATE</text>
+        <text x="16" y="66" font-family="DejaVu Sans" font-size="13" fill="#ffd28a" letter-spacing="2">EP. 02</text>
+      </svg>
+      <svg class="reel" width="40" height="40"><use href="#reel"/></svg>
+      <div class="views"><svg width="26" height="26"><use href="#eye"/></svg>9.8K</div>
+    </div>
+
+    <!-- 6. Primer plano tabla + tenis en la calle -->
+    <div class="tile">
+      <svg class="art" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="s3bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b2433"/><stop offset=".55" stop-color="#3b3f4a"/><stop offset="1" stop-color="#2a2a2c"/></linearGradient>
+          <linearGradient id="s3road" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#48484c"/><stop offset="1" stop-color="#1c1c1e"/></linearGradient>
+          <linearGradient id="s3shoe" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f1efe9"/><stop offset="1" stop-color="#b8b3aa"/></linearGradient>
+        </defs>
+        <g filter="url(#grain)">
+          <rect width="300" height="400" fill="url(#s3bg)"/>
+          <!-- bokeh ciudad -->
+          <g filter="url(#blur8)">
+            <circle cx="40" cy="120" r="14" fill="#ffb347" opacity=".7"/><circle cx="96" cy="90" r="10" fill="#ff6b6b" opacity=".6"/>
+            <circle cx="170" cy="130" r="16" fill="#ffd27a" opacity=".6"/><circle cx="240" cy="96" r="12" fill="#6bd1ff" opacity=".5"/>
+            <circle cx="280" cy="150" r="14" fill="#ffb347" opacity=".6"/><circle cx="130" cy="170" r="8" fill="#fff" opacity=".4"/>
+          </g>
+          <!-- calle -->
+          <path d="M0 220 L300 200 L300 400 L0 400 Z" fill="url(#s3road)"/>
+          <path d="M0 220 L300 200 L300 400 L0 400 Z" fill="#fff" filter="url(#concrete)" opacity=".35"/>
+          <path d="M150 400 L210 204" stroke="#e8d27a" stroke-width="6" opacity=".35" stroke-dasharray="30 22" filter="url(#blur3)"/>
+          <!-- tabla -->
+          <path d="M-20 300 L250 262 C270 258 280 266 266 276 L-20 318 Z" fill="#141416"/>
+          <path d="M-20 300 L250 262 C262 260 270 262 270 266 L-20 306 Z" fill="#2fd27a" opacity=".85"/>
+          <!-- truck + ruedas -->
+          <rect x="190" y="282" width="40" height="8" fill="#9aa0a6" transform="rotate(-8 210 286)"/>
+          <ellipse cx="228" cy="304" rx="22" ry="24" fill="#f0e6c8"/><ellipse cx="228" cy="304" rx="10" ry="11" fill="#b0a78e"/><ellipse cx="228" cy="304" rx="4" ry="4.5" fill="#666"/>
+          <ellipse cx="40" cy="332" rx="16" ry="18" fill="#d8ceb0" opacity=".85"/>
+          <!-- tenis -->
+          <path d="M40 286 C40 250 60 230 90 226 C110 224 118 236 130 244 C156 246 178 254 184 270 L60 292 Z" fill="url(#s3shoe)"/>
+          <path d="M54 290 L186 270 L188 276 L56 298 Z" fill="#e7e2d6"/>
+          <path d="M92 236 L122 246 M90 246 L124 254 M96 256 L128 262" stroke="#1d1d1f" stroke-width="3"/>
+          <path d="M60 262 C80 256 110 262 140 262" stroke="#1d1d1f" stroke-width="5" fill="none" opacity=".85"/>
+          <!-- pierna / jean -->
+          <path d="M60 232 C58 180 60 120 70 0 L150 0 C140 110 130 190 122 240 C104 232 80 226 60 232 Z" fill="#2c3a55"/>
+          <path d="M60 232 C58 180 60 120 70 0 L150 0 C140 110 130 190 122 240 C104 232 80 226 60 232 Z" fill="#fff" filter="url(#concrete)" opacity=".25"/>
+          <path d="M60 232 C80 220 104 222 122 240" fill="none" stroke="#1d2638" stroke-width="6"/>
+        </g>
+        <text x="16" y="44" font-family="DejaVu Sans" font-weight="bold" font-size="22" fill="#fff" letter-spacing="3">SKATE</text>
+        <text x="16" y="66" font-family="DejaVu Sans" font-size="13" fill="#ffd28a" letter-spacing="2">EP. 03</text>
+      </svg>
+      <svg class="reel" width="40" height="40"><use href="#reel"/></svg>
+      <div class="views"><svg width="26" height="26"><use href="#eye"/></svg>15.1K</div>
+    </div>
+
+    <!-- ================= SERIE 3 · CÁMARAS VIAJERAS ================= -->
+
+    <!-- 7. Cámara desechable sobre mapa -->
+    <div class="tile">
+      <svg class="art" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="c1map" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#efe2c3"/><stop offset="1" stop-color="#cbb58a"/></linearGradient>
+          <linearGradient id="c1body" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1e8a53"/><stop offset="1" stop-color="#0f5a35"/></linearGradient>
+          <radialGradient id="c1flash" cx=".35" cy=".3" r=".9"><stop offset="0" stop-color="#fff" stop-opacity=".35"/><stop offset="1" stop-color="#000" stop-opacity=".35"/></radialGradient>
+          <radialGradient id="c1lens"><stop offset="0" stop-color="#3a4f6a"/><stop offset=".6" stop-color="#0c1320"/><stop offset="1" stop-color="#000"/></radialGradient>
+        </defs>
+        <g filter="url(#grain)">
+          <rect width="300" height="400" fill="url(#c1map)"/>
+          <g stroke="#a6906a" fill="none" opacity=".6">
+            <path d="M0 80 C60 60 110 110 170 90 S260 50 300 70"/><path d="M0 250 C70 230 120 280 190 250 S270 220 300 240"/>
+            <path d="M80 0 C90 80 60 160 90 240 S100 360 80 400" stroke-dasharray="4 4"/>
+            <path d="M220 0 C200 120 240 220 210 400" opacity=".5"/>
+          </g>
+          <path d="M40 120 C60 100 90 110 110 130 C120 150 100 170 80 168 C60 166 34 146 40 120 Z" fill="#b9d3a4" opacity=".6"/>
+          <circle cx="210" cy="300" r="5" fill="#d94a3a"/><path d="M84 152 Q150 200 210 300" stroke="#d94a3a" stroke-width="2" stroke-dasharray="5 5" fill="none"/>
+          <!-- pasaporte -->
+          <rect x="190" y="30" width="110" height="150" rx="8" fill="#2a3452" transform="rotate(12 245 105)"/>
+          <circle cx="250" cy="100" r="18" fill="none" stroke="#c9a85a" stroke-width="2" transform="rotate(12 245 105)"/>
+          <!-- sombra cámara -->
+          <rect x="44" y="176" width="220" height="130" rx="14" fill="#000" opacity=".35" filter="url(#blur8)" transform="rotate(-6 150 240)"/>
+          <!-- cámara -->
+          <g transform="rotate(-6 150 230)">
+            <rect x="36" y="160" width="224" height="128" rx="12" fill="#161616"/>
+            <rect x="36" y="178" width="224" height="92" fill="url(#c1body)"/>
+            <rect x="36" y="160" width="224" height="128" rx="12" fill="url(#c1flash)"/>
+            <rect x="60" y="168" width="44" height="26" rx="3" fill="#dfe7ea"/><rect x="64" y="172" width="36" height="18" fill="#fffbe0" opacity=".85"/>
+            <rect x="200" y="168" width="30" height="20" rx="3" fill="#0b0b0b"/><rect x="204" y="171" width="22" height="14" fill="#2c3d52"/>
+            <circle cx="148" cy="228" r="36" fill="#0a0a0a"/><circle cx="148" cy="228" r="28" fill="url(#c1lens)"/>
+            <circle cx="140" cy="218" r="7" fill="#fff" opacity=".5"/><circle cx="156" cy="236" r="3" fill="#9bf" opacity=".4"/>
+            <text x="200" y="232" font-family="DejaVu Sans" font-weight="bold" font-size="17" fill="#fff" letter-spacing="1">ZAMRUD</text>
+            <text x="200" y="250" font-family="DejaVu Sans" font-size="10" fill="#bff5d8" letter-spacing="1">27 EXP · ISO 400</text>
+            <path d="M66 238 L78 226 L90 238 L78 252 Z" fill="#7df0b0"/><path d="M66 238 L90 238 L78 252 Z" fill="#2fd27a"/>
+            <rect x="236" y="150" width="18" height="12" rx="3" fill="#2a2a2a"/>
+            <rect x="46" y="150" width="30" height="10" rx="3" fill="#2a2a2a"/>
+          </g>
+        </g>
+        <text x="16" y="44" font-family="DejaVu Sans" font-weight="bold" font-size="17" fill="#fff" letter-spacing="1.5">CÁMARA VIAJERA</text>
+        <text x="16" y="66" font-family="DejaVu Sans" font-size="13" fill="#7df0b0" font-weight="bold" letter-spacing="2">EP. 01</text>
+      </svg>
+      <svg class="reel" width="40" height="40"><use href="#reel"/></svg>
+      <div class="views"><svg width="26" height="26"><use href="#eye"/></svg>6.3K</div>
+    </div>
+
+    <!-- 8. Viajero con la cámara en la playa / montaña, flash -->
+    <div class="tile">
+      <svg class="art" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="c2sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7fb4d8"/><stop offset=".6" stop-color="#e7d3b0"/><stop offset="1" stop-color="#e7d3b0"/></linearGradient>
+          <linearGradient id="c2sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2c7fa3"/><stop offset="1" stop-color="#5fb3c4"/></linearGradient>
+          <radialGradient id="c2burst"><stop offset="0" stop-color="#fff"/><stop offset=".3" stop-color="#fff" stop-opacity=".8"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+          <linearGradient id="c2skin" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c98d66"/><stop offset="1" stop-color="#8e5a3e"/></linearGradient>
+        </defs>
+        <g filter="url(#grain)">
+          <rect width="300" height="400" fill="url(#c2sky)"/>
+          <path d="M0 210 L60 170 L100 190 L160 150 L220 196 L300 176 L300 230 L0 230 Z" fill="#5d7a6a" opacity=".7" filter="url(#blur3)"/>
+          <rect x="0" y="226" width="300" height="60" fill="url(#c2sea)" filter="url(#blur3)"/>
+          <rect x="0" y="282" width="300" height="118" fill="#e3caa0"/>
+          <!-- persona -->
+          <path d="M60 400 C62 320 90 290 150 286 C210 290 238 320 240 400 Z" fill="#f2f2ee"/>
+          <path d="M120 290 L150 320 L180 290" fill="none" stroke="#d7d7d0" stroke-width="3"/>
+          <rect x="132" y="250" width="36" height="42" fill="url(#c2skin)"/>
+          <ellipse cx="150" cy="200" rx="46" ry="56" fill="url(#c2skin)"/>
+          <path d="M100 196 C96 140 130 126 152 128 C184 128 206 150 200 196 C192 170 180 160 150 160 C124 160 110 172 100 196 Z" fill="#2a1a12"/>
+          <!-- gorra -->
+          <path d="M104 172 C104 130 196 126 198 172 Z" fill="#1f7a4a"/><path d="M104 170 C130 166 170 164 232 174 L232 180 C180 174 140 174 104 178 Z" fill="#165c37"/>
+          <!-- manos + cámara -->
+          <rect x="96" y="186" width="112" height="62" rx="8" fill="#161616"/>
+          <rect x="96" y="196" width="112" height="44" fill="#1e8a53"/>
+          <circle cx="152" cy="218" r="18" fill="#0a0a0a"/><circle cx="152" cy="218" r="12" fill="#23364d"/><circle cx="148" cy="213" r="3.5" fill="#fff" opacity=".5"/>
+          <rect x="178" y="190" width="24" height="14" fill="#f4f4f0"/>
+          <path d="M82 206 C80 190 94 184 104 190 L104 248 C92 250 84 238 82 206 Z" fill="url(#c2skin)"/>
+          <path d="M222 206 C224 190 210 184 200 190 L200 248 C212 250 220 238 222 206 Z" fill="url(#c2skin)"/>
+          <path d="M200 196 L214 196 M200 206 L216 206 M200 216 L216 216" stroke="#7a4a30" stroke-width="1.5"/>
+          <!-- flash -->
+          <circle cx="190" cy="197" r="70" fill="url(#c2burst)"/>
+          <g stroke="#fff" stroke-width="2" opacity=".8"><path d="M190 197 L260 150"/><path d="M190 197 L262 220"/><path d="M190 197 L150 130"/><path d="M190 197 L230 110"/></g>
+        </g>
+        <!-- fecha estilo film -->
+        <text x="200" y="380" font-family="DejaVu Sans Mono" font-weight="bold" font-size="16" fill="#ff8a2a" opacity=".9">'26 9 27</text>
+        <text x="16" y="44" font-family="DejaVu Sans" font-weight="bold" font-size="17" fill="#fff" letter-spacing="1.5">CÁMARA VIAJERA</text>
+        <text x="16" y="66" font-family="DejaVu Sans" font-size="13" fill="#7df0b0" font-weight="bold" letter-spacing="2">EP. 02</text>
+      </svg>
+      <svg class="reel" width="40" height="40"><use href="#reel"/></svg>
+      <div class="views"><svg width="26" height="26"><use href="#eye"/></svg>7.9K</div>
+    </div>
+
+    <!-- 9. Fotos reveladas + sobre de correo -->
+    <div class="tile">
+      <svg class="art" viewBox="0 0 300 400" preserveAspectRatio="xMidYMid slice">
+        <defs>
+          <linearGradient id="c3table" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6b4a33"/><stop offset="1" stop-color="#3d2a1d"/></linearGradient>
+          <linearGradient id="c3p1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f7a35c"/><stop offset=".6" stop-color="#d9544a"/><stop offset="1" stop-color="#2a1a2a"/></linearGradient>
+          <linearGradient id="c3p2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9ccbe8"/><stop offset=".6" stop-color="#6e9f7a"/><stop offset="1" stop-color="#3d5a3a"/></linearGradient>
+          <linearGradient id="c3p3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#20243a"/><stop offset="1" stop-color="#51305a"/></linearGradient>
+        </defs>
+        <g filter="url(#grain)">
+          <rect width="300" height="400" fill="url(#c3table)"/>
+          <g stroke="#2e1f15" opacity=".5" fill="none"><path d="M0 60 C100 70 200 50 300 64"/><path d="M0 150 C120 160 220 140 300 156"/><path d="M0 330 C100 340 200 320 300 336"/></g>
+          <!-- sobre -->
+          <g transform="rotate(-4 150 300)">
+            <rect x="20" y="230" width="260" height="150" rx="4" fill="#000" opacity=".35" filter="url(#blur8)"/>
+            <rect x="16" y="222" width="260" height="150" rx="4" fill="#caa46f"/>
+            <path d="M16 222 L146 300 L276 222" fill="none" stroke="#a7834f" stroke-width="2"/>
+            <rect x="222" y="236" width="40" height="46" fill="#f2efe6" stroke="#b44" stroke-width="2" stroke-dasharray="3 2"/>
+            <path d="M232 270 L242 250 L252 270 Z" fill="#1fbf6a"/>
+            <circle cx="206" cy="262" r="20" fill="none" stroke="#3a4a8a" stroke-width="2" opacity=".6"/>
+            <text x="192" y="266" font-family="DejaVu Sans" font-size="8" fill="#3a4a8a" opacity=".8">CORREO</text>
+            <text x="40" y="330" font-family="DejaVu Sans Mono" font-size="13" fill="#3b2a1a">ZAMRUD · BOGOTÁ</text>
+            <text x="40" y="348" font-family="DejaVu Sans Mono" font-size="10" fill="#5a4630">Rollo #014 — revelar</text>
+          </g>
+          <!-- fotos -->
+          <g transform="rotate(-12 90 150)">
+            <rect x="26" y="84" width="120" height="146" fill="#fbfaf5"/>
+            <rect x="34" y="92" width="104" height="112" fill="url(#c3p1)"/>
+            <circle cx="86" cy="150" r="16" fill="#ffe0a0" opacity=".85"/>
+            <path d="M34 180 L64 160 L90 176 L138 150 L138 204 L34 204 Z" fill="#2a1a2a"/>
+          </g>
+          <g transform="rotate(8 200 140)">
+            <rect x="148" y="70" width="120" height="146" fill="#fbfaf5"/>
+            <rect x="156" y="78" width="104" height="112" fill="url(#c3p2)"/>
+            <path d="M156 160 L190 118 L214 146 L236 124 L260 150 L260 190 L156 190 Z" fill="#3d5a3a"/>
+            <text x="222" y="186" font-family="DejaVu Sans Mono" font-weight="bold" font-size="10" fill="#ff8a2a">'26 9 12</text>
+          </g>
+          <g transform="rotate(-2 150 170)">
+            <rect x="92" y="130" width="120" height="146" fill="#fbfaf5"/>
+            <rect x="100" y="138" width="104" height="112" fill="url(#c3p3)"/>
+            <!-- flash nocturno: amigos -->
+            <circle cx="132" cy="186" r="13" fill="#e9b28e"/><circle cx="170" cy="182" r="13" fill="#d69a78"/>
+            <path d="M114 250 C114 214 150 206 150 250 Z" fill="#111"/><path d="M152 250 C152 210 190 204 192 250 Z" fill="#1f7a4a"/>
+            <path d="M120 180 C120 166 144 164 146 180 Z" fill="#111"/><path d="M158 176 C158 162 182 162 184 176 Z" fill="#3a2418"/>
+            <rect x="100" y="138" width="104" height="112" fill="#fff" opacity=".08"/>
+          </g>
+        </g>
+        <text x="16" y="44" font-family="DejaVu Sans" font-weight="bold" font-size="17" fill="#fff" letter-spacing="1.5">CÁMARA VIAJERA</text>
+        <text x="16" y="66" font-family="DejaVu Sans" font-size="13" fill="#7df0b0" font-weight="bold" letter-spacing="2">EP. 03</text>
+      </svg>
+      <svg class="reel" width="40" height="40"><use href="#reel"/></svg>
+      <div class="views"><svg width="26" height="26"><use href="#eye"/></svg>5.2K</div>
+    </div>
+
+  </div>
+
+  <div class="nav">
+    <svg width="54" height="54" viewBox="0 0 24 24"><path d="M3 10l9-7 9 7v10a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z" fill="none" stroke="#fff" stroke-width="1.8"/></svg>
+    <svg width="54" height="54" viewBox="0 0 24 24"><rect x="2.5" y="2.5" width="19" height="19" rx="5" fill="none" stroke="#fff" stroke-width="1.8"/><path d="M10 8.5l5.5 3.5-5.5 3.5z" fill="none" stroke="#fff" stroke-width="1.8"/></svg>
+    <svg width="54" height="54" viewBox="0 0 24 24"><path d="M22 3L2 10l8 3 3 8z" fill="none" stroke="#fff" stroke-width="1.8" stroke-linejoin="round"/></svg>
+    <svg width="54" height="54" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="7" fill="none" stroke="#fff" stroke-width="2"/><path d="M16 16l5.5 5.5" stroke="#fff" stroke-width="2"/></svg>
+    <div class="navav"></div>
+  </div>
+  <div class="home"></div>
+</div>
+
+<div class="panel" id="panel">
+  <div class="kicker">Propuesta · Feed de Instagram</div>
+  <h1>Así queremos que se vea<br>el feed de <span>@zamrudcol</span></h1>
+  <p class="lead">Instagram acomoda las publicaciones de a 3 por fila. Vamos a aprovechar eso: <b>cada serie se sube en bloques de 3 videos</b> con la misma línea gráfica de portada, para que quien entre al perfil entienda — sin abrir un solo video — qué contenidos pertenecen a la misma serie.</p>
+  <div class="rule"><b>Regla:</b> 3 videos = 1 serie = 1 fila con la misma portada/estética. Cada 3 publicaciones cambia la portada. Se suben en orden (EP. 01 → 02 → 03) para que la fila quede completa y alineada.</div>
+
+  <div class="rows" id="rows">
+    <div class="series" data-row="0">
+      <div class="bracket" style="border-color:#ff4fd8"></div>
+      <div><div class="num" style="color:#ff8be6">Serie 1 · Fila de arriba</div>
+        <h2>Felinos — estilo anime</h2>
+        <p>Ilustración anime, fondo oscuro con neón. Una chica con una pantera, una silueta felina con ojos rojos en la oscuridad y un jaguar de ojos esmeralda sobre los cerros de Bogotá.</p></div>
+    </div>
+    <div class="series" data-row="1">
+      <div class="bracket" style="border-color:#ffb35c"></div>
+      <div><div class="num" style="color:#ffd28a">Serie 2 · Fila del medio</div>
+        <h2>Skaters — realista</h2>
+        <p>Grabación real (nada de anime): trucos a contraluz en escaleras, grind en el bowl y planos cerrados de tabla y tenis en la calle.</p></div>
+    </div>
+    <div class="series" data-row="2">
+      <div class="bracket" style="border-color:#2fd27a"></div>
+      <div><div class="num" style="color:#7df0b0">Serie 3 · Fila de abajo</div>
+        <h2>Cámaras viajeras</h2>
+        <p>Cámaras desechables que le entregamos a la gente para que se las lleve de viaje y nos las envíe por correo: la cámara, el viajero disparando el flash y el rollo revelado.</p></div>
+    </div>
+  </div>
+  <p class="foot">* Portadas y cifras de vistas son ilustrativas, solo como referencia visual. Las publicaciones más recientes quedan arriba: la serie de abajo se sube primero.</p>
+</div>
+
+</div>
+
+<script>
+  // Alinea cada etiqueta con su fila real de la cuadrícula.
+  const tiles = document.querySelectorAll('.tile');
+  const rows = document.getElementById('rows').getBoundingClientRect();
+  document.querySelectorAll('.series').forEach(s => {
+    const r = +s.dataset.row;
+    const a = tiles[r * 3].getBoundingClientRect();
+    s.style.top = (a.top - rows.top) + 'px';
+    s.style.height = a.height + 'px';
+  });
+</script>
+</body>
+</html>
