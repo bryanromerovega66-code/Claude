@@ -1,51 +1,57 @@
-# Guion — Publicación 2: El reclutamiento (carro, Kenny y la máscara nueva)
+# Guion — Publicación 2: El reclutamiento (carro, el maletín y la máscara de Keni)
+
+## Nombres — grafía fijada de aquí en adelante
+
+**Zamrud** (Z-A-M-R-U-D), **Keni** (K-E-N-I) y **Rovvi** (R-O-V-V-I) — así se escriben siempre, sin variaciones ("Kenny" y "Robbie" quedan descartados como grafía). Esta regla es tan permanente como la del léxico bogotano: cualquier guion o pieza de copy que se escriba de acá en adelante usa estas tres grafías exactas.
 
 ## Qué resuelve esta pieza
 
-**Reemplaza la versión anterior de esta publicación** (el paneo de 360° a dos personajes en la terraza). Sigue ocupando el mismo slot — el medio del bloque fijado del Génesis — pero ahora es un cortometraje de 60 segundos que arranca en el carro de Sunroot, suma a Kenny como segundo personaje real (con su propia máscara personalizada, que estrena en esta misma pieza) y cierra con un llamado a la acción hablado: no solo "estamos buscando esmeraldas", sino "estamos reclutando gente para buscarlas". El carro queda mostrado como parte del contenido — no es solo transporte, es material cruzado con los proyectos de Sunroot.
+Segunda reescritura de esta publicación — mantiene el mismo slot (medio del bloque fijado del Génesis) pero ahora con una estructura de misión/reclutamiento más marcada: Keni maneja, Rovvi va de copiloto y es quien reclama la misión en voz alta; en el camino les entregan un maletín con la máscara nueva de Keni (una mano, sin rostro, nunca se identifica a quien la entrega); paran en un punto bien rolo de la ciudad para que Keni se la ponga; recogen a la modelo con una línea más jocosa; y en la terraza ella propone el giro central de la pieza — en vez de pelear contra los demás buscadores de esmeraldas, unirse a ellos — que cierra con el doble sentido ya explícito de que las esmeraldas son los artistas, y el llamado a la acción de Rovvi.
 
-**Locación:** carro en movimiento (calle) → terraza ya scouteada. **Reparto en cuadro:** Protagonista (manejando), Kenny (copiloto, máscara nueva), modelo (atrás, se suman en el camino). **Duración:** ~60 seg. **Cámara:** las tres de siempre — Osmo 360 para exteriores del carro y el plano de escala de cierre, Sony para los planos fijos a contraluz en la terraza, Action 6 para el close-up en cámara lenta del momento en que Kenny se pone la máscara.
+**Locación:** carro en movimiento (calle/avenida) → terraza ya scouteada. **Reparto en cuadro:** Keni (manejando, sin máscara al inicio, se la pone a mitad de pieza), Rovvi (copiloto, mitológicamente siempre con el rostro cubierto, sin excepción), modelo (se suma en el camino). **Duración:** ~60 seg. **Cámara:** Osmo 360 para los exteriores del carro y el plano de escala de cierre en la terraza, Sony para los planos fijos a contraluz de la terraza, Action 6 para el close-up en cámara lenta de las manos de Keni abriendo el maletín y poniéndose la máscara.
 
 ## Shot list, minuto a minuto
 
-**0:00–0:06 — el carro en movimiento, planos hero de Sunroot.** Exterior (rines, carrocería, placa tapada o visible según se quiera) intercalado con interior: el Protagonista maneja, Kenny va de copiloto con la caja de la máscara nueva ya en las piernas — no hay parada que mostrar, ya la llevan encima desde que arranca el video.
-> **Protagonista:** "Listos. Hoy toca ir por ella."
+**0:00–0:08 — el carro ya en movimiento.** Plano interior, Sony handheld (técnica Top Boy). Keni maneja, Rovvi va de copiloto con la máscara cubriéndole el rostro como siempre.
+> **Rovvi:** "Venga, tengo que pasar por esa máscara para poder empezar con esa misión, hombre."
+> **Keni:** "Listo, vamos."
 
-**0:06–0:14 — recogen a la modelo.** El carro se detiene un segundo, ella se sube atrás. Plano desde dentro del carro, handheld, naturalista (técnica Top Boy).
-> **Modelo:** "Buenas. ¿Vamos tarde o qué?"
-> **Protagonista:** "Un poco. Pero sin usted no arrancábamos."
+**0:08–0:14 — entrega del maletín.** El carro reduce velocidad cerca de una esquina; una mano entra por la ventana del lado de Keni y le pasa un maletín — close-up Action 6 solo a la mano y el maletín, nunca se ve de quién es. El carro sigue avanzando de inmediato, sin detenerse del todo.
 
-**0:14–0:22 — Kenny estrena la máscara, en movimiento.** Close-up en cámara lenta (Action 6) a las manos de Kenny abriendo la caja y poniéndosela — el mismo recurso de la tela en el viento de Peaky Blinders, aplicado acá al gesto de las manos y la tela de la máscara en vez de a una entrada de cuerpo completo.
-> **Kenny** (poniéndosela): "Esta me la hicieron a la medida. Hoy se estrena."
-> **Modelo:** "Se le ve bien, parce."
+**0:14–0:20 — paran en un spot bien rolo (avenida o esquina de barrio).** Keni destapa el maletín — close-up en cámara lenta (Action 6, el mismo recurso de tela en movimiento de Peaky Blinders, aplicado acá a las manos y la tela de la máscara) — y se la pone.
+> **Keni** (poniéndosela): "Esta me la hicieron a la medida. Hoy se estrena."
 
-**0:22–0:28 — llegada a la terraza.** Los tres bajan del carro y entran a cuadro caminando hacia el punto ya scouteado. Plano de escala (Osmo 360, técnica Blade Runner): los tres pequeños contra la ciudad.
+**0:20–0:28 — recogen a la modelo.** Se detienen frente a ella; tono jocoso, no tenso.
+> **Rovvi:** "¿Qué le pareció la misión que le mandé? ¿Se apunta?"
+> **Modelo** (subiéndose, con humor): "Yo no manejo."
 
-**0:28–0:50 — la conversación de reclutamiento.** Planos fijos a contraluz, Sony, alternando entre los tres (técnica The Crow ya establecida para esta locación).
-> **Modelo:** "¿Y con esto ya completamos, o todavía falta gente?"
-> **Protagonista:** "Todavía falta mucho. Las esmeraldas no se acaban fácil."
-> **Kenny:** "Bogotá es grande. Y es fría. Esto no se hace solo entre tres."
-> **Protagonista:** "Necesitamos más manos. Más rolos que se la jueguen por esto de verdad."
-> **Modelo:** "¿Y cómo sabe quién sirve pa' esto?"
-> **Protagonista:** "Eso se nota de una. El que quiere buscar, busca."
+**0:28–0:34 — llegada a la terraza.** Plano de escala (Osmo 360, técnica Blade Runner): los tres pequeños contra la ciudad, caminando hacia el punto ya scouteado.
 
-**0:50–1:00 — cierre, llamado a la acción.** El Protagonista queda solo en cuadro, mirando hacia el horizonte/cámara, plano fijo Sony a contraluz. Cierre en plano de escala (Osmo 360) idéntico en técnica al resto de cierres del Génesis.
-> **Protagonista:** "Si usted también anda buscando esmeraldas, aquí hay espacio. Únase."
+**0:34–0:50 — la propuesta de la modelo, en la terraza.** Planos fijos a contraluz, Sony, alternando entre los tres (técnica The Crow ya establecida para esta locación).
+> **Modelo:** "Bueno. Denme detalles. ¿Qué es lo que estamos buscando en realidad?"
+> **Rovvi:** "Tenemos que seguir buscando esmeraldas. Las que tenemos no alcanzan, y en Bogotá todavía hay demasiadas escondidas."
+> **Modelo:** "¿Sabe qué? Hay más gente ahí afuera buscando lo mismo que nosotros. ¿Y si en vez de pelearles, nos unimos a ellos?"
+> **Keni:** "¿Unirnos? ¿Así de fácil?"
+> **Modelo:** "Con eso le hacemos saber al mundo cuántas esmeraldas hay en Bogotá. El que ya sabe, que se identifique. El que no sabe, que se entere."
 
-Sin texto en pantalla en ningún punto — todo el peso del llamado a la acción queda en esta última línea hablada.
+**0:50–1:00 — cierre: el doble sentido y el llamado a la acción.** Plano fijo Sony a contraluz, cierre en plano de escala Osmo 360.
+> **Modelo** (mirando al horizonte): "Esas esmeraldas no son piedras. Son los artistas que en esta ciudad nadie ha escuchado todavía."
+> **Rovvi** (remata, mirando a cámara): "Por eso seguimos buscando a los que faltan. Si usted también anda haciendo arte por esta ciudad, aquí hay espacio. Únase. Bogotá, la fría. La nevera. Bogotá."
+
+Sin texto en pantalla en ningún punto — el llamado a la acción y el doble sentido quedan enteramente en lo hablado.
 
 ## Notas de rodaje
 
-Las tomas del carro se resuelven en una sola pasada corta por una calle ya conocida y segura, más una pasada estática aparte (carro parqueado) para los insertos hero de Sunroot (rines, detalle de carrocería, espejo) — se intercalan en edición, no hace falta grabar los dos tipos de plano al mismo tiempo ni en movimiento real si la seguridad lo complica. El momento de Kenny poniéndose la máscara es el plano más exigente en tiempo: vale la pena 2-3 tomas solo de las manos y la caja, aunque el carro esté detenido en ese instante y se edite como si estuviera en movimiento. El diálogo se graba limpio con solapa en los tres personajes, igual que ya se definió para esta pieza — nunca en off.
+El carro se filma en una sola pasada corta por una vía conocida y segura; la entrega del maletín se resuelve con el carro apenas reduciendo velocidad, no un stop completo — basta con que el operador (Action 6) tenga el plano de la mano y el maletín ya encuadrado antes de rodar esa toma, y se hacen 2-3 repeticiones de solo ese gesto si hace falta. La parada "bien rolo" no exige locación nueva que gestionar: cualquier esquina o tramo de avenida con buen carácter visual de barrio sirve, elegido el mismo día según por dónde vaya pasando el carro. El diálogo se graba limpio con solapa en los tres personajes, nunca en off.
 
-**Vestuario:** el Protagonista mantiene balaclava/máscara, drill negro, único acento esmeralda — sin excepción. Kenny estrena su máscara personalizada dentro del mismo sistema de una sola gama (negro, un único acento de color) para que la paleta de marca no se rompa con un segundo diseño — su máscara puede tener un corte o textura distinta a la del Protagonista, pero el acento de color se mantiene en el mismo esmeralda de marca para que se lea como del mismo proyecto, no como un personaje aparte. La modelo conserva el código ya definido (negro, vigilancia, no acompañamiento decorativo).
+**Vestuario:** Rovvi mantiene el rostro cubierto (balaclava/máscara, drill negro, único acento esmeralda) en todo momento, sin excepción, incluso en las escenas de carro — es la regla de marca ya establecida para el protagonista. Keni aparece sin máscara al arrancar el video y se la pone en cámara a mitad de pieza — ese es precisamente el momento que vende el "estreno". Su máscara mantiene el mismo acento esmeralda de marca aunque el diseño/corte sea distinto al de Rovvi, para que se lea como del mismo proyecto. La modelo conserva el código ya definido (negro, vigilancia, no acompañamiento decorativo).
 
-**Léxico:** toda la conversación ya está revisada contra la regla de marca — registro "usted" bogotano entre los tres, jerga colombiana moderada (parce, rolo, de una, pa'), nada de voseo ni modismos rioplatenses.
+**Léxico:** registro "usted" bogotano entre los tres en todo el guion, jerga colombiana moderada (rolo, de una), nada de voseo ni modismos rioplatenses.
 
 ## Por qué no exige más presupuesto
 
-El carro ya es propio (no hay alquiler ni producción nueva ahí), el reparto sigue siendo el mismo núcleo de siempre más Kenny (que aporta su propia máscara ya hecha, no utilería que haya que fabricar), y la terraza es la misma locación ya scouteada para todo el bloque del Génesis. Todo se resuelve en una sola jornada: una pasada corta en carro antes de llegar a la terraza donde ya estaba programado el rodaje principal del bloque.
+El carro ya es propio, el reparto sigue siendo el mismo núcleo de siempre, la "entrega del maletín" se resuelve con un extra que solo presta una mano (nunca aparece, no necesita vestuario ni dirección de actuación), la parada rolo es cualquier esquina que ya esté en el camino, y la terraza es la misma locación scouteada para todo el bloque del Génesis. Todo en una sola jornada: pasada corta en carro antes de llegar al rodaje principal ya programado.
 
-## Nota sobre Kenny en el roster
+## Nota sobre Keni en el roster
 
-Este video introduce a Kenny como segundo miembro real del proyecto, con máscara propia que estrena en cámara — un disparador natural para activar uno de los dos cupos felinos que seguían reservados (Ocelote/tigrillo o Yaguarundí), ya que el sistema de roster define que cada miembro real del core tiene una identidad felina, a diferencia de la modelo (rol de vigilancia) o un featuring (solo recibe el sello de paso, nunca identidad felina). Queda como propuesta a confirmar: **Ocelote/tigrillo para Kenny**, dejando el Yaguarundí libre para un futuro integrante. Una vez confirmado, esto se formaliza en `identidad-de-contenido-zamrud.md`.
+Keni debutando su propia máscara en cámara sigue siendo el disparador natural para activar uno de los dos cupos felinos todavía reservados (Ocelote/tigrillo o Yaguarundí) — pendiente de confirmar, sin cambios respecto a la propuesta anterior.
