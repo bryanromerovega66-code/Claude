@@ -126,8 +126,10 @@ Los posts fijados se ordenan según el orden en que se fijan, no según su fecha
 **Aplicación concreta al Génesis:**
 
 1. **Portada/reveal (se fija a la izquierda).** Puma (la guía, ya asignada en el roster) aparece como silueta o sombra sacando al tigre de cuadro — el mismo tratamiento roto ya definido para el impostor — y el Reel corta a Jaguar (el protagonista) rapeando, enmascarado, a contraluz con la técnica Sony/The Crow ya establecida.
-2. **Video narrativo (se fija al medio).** La pieza de 60-90 segundos ya dirigida en este documento (protagonista buscando la esmeralda en la terraza, la guía vigilando desde otro plano, cierre con la carta BOGOTHAM). Reutiliza directamente el material de la Fase 2 — Cine ya planeada, sin rodaje adicional.
+2. **Video narrativo (se fija al medio).** El cortometraje de reclutamiento de 60 segundos (guion completo en `guion-video-genesis-zamrud.md`): arranca en el carro de Sunroot, suma a Kenny como segundo personaje real estrenando su máscara personalizada, llega a la terraza y cierra con el llamado a la acción hablado — "aquí hay espacio, únase". Reemplaza la versión anterior de esta pieza (paneo solo en la terraza); reutiliza la misma locación y jornada de rodaje ya planeada para el bloque, solo suma una pasada corta en carro antes de llegar.
 3. **Making of (se fija a la derecha).** Reel corto del mismo día de rodaje: vestuario, cámaras (Osmo 360, Sony, Action 6) en set, el gel de luz o reflector improvisado, algún blooper o pausa entre tomas.
+
+**Nuevo personaje: Kenny.** Este video introduce a Kenny como segundo miembro real del proyecto, con máscara propia que estrena en cámara — un disparador natural para activar uno de los dos cupos felinos todavía reservados en el roster (Ocelote/tigrillo o Yaguarundí). Propuesta a confirmar: Ocelote/tigrillo para Kenny, dejando el Yaguarundí libre para un futuro integrante.
 
 La pieza corta de 6-10 segundos (Fase 1 — El aviso) no ocupa un cuarto slot: se usa como teaser en Historias antes de que el bloque completo llegue al perfil, no como publicación de la cuadrícula ni del pin.
 
