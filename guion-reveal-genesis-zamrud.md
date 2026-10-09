@@ -1,4 +1,4 @@
-# Guion — Publicación 1: Reveal Puma / Jaguar (bloque fijado del Génesis)
+# Génesis Zamrud — Portada/reveal (Puma / Jaguar)
 
 ## Qué resuelve esta pieza
 

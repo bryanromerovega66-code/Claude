@@ -1,18 +1,18 @@
-# Guion — Publicación 2: El reclutamiento (tablero, máscara de Keni y terraza)
+# Génesis Zamrud — Video narrativo (tablero, máscara de Keni y terraza)
 
 ## Nombres — grafía fijada de aquí en adelante
 
-**Zamrud** (Z-A-M-R-U-D), **Keni** (K-E-N-I) y **Rovvi** (R-O-V-V-I) — así se escriben siempre, sin variaciones. **Pendiente de confirmar:** el nombre de la productora/proyecto de contenido del carro se ha dictado de dos formas distintas en esta conversación — "Sunroot" y "Sam Root". Antes de imprimir cualquier foto o crédito con ese nombre, confirmar cuál es la grafía correcta.
+**Zamrud** (Z-A-M-R-U-D), **Keni** (K-E-N-I) y **Rovvi** (R-O-V-V-I) — así se escriben siempre, sin variaciones. "Sunroot" y "Sam Root" no son otra marca — son la misma palabra "Zamrud" mal transcrita; de acá en adelante el carro y todo el contenido cruzado se acreditan simplemente como Zamrud.
 
 ## Qué resuelve esta pieza
 
-Tercera reescritura de esta publicación — mismo slot (medio del bloque fijado del Génesis), pero ahora con una estructura de dos tiempos: un cold open tipo tablero de investigación que plantea el misterio desde afuera (alguien más está buscando a Rovvi y Keni, igual que ellos buscan esmeraldas), y luego la escena en primera persona de siempre (Keni estrena máscara, salen en el carro, recogen a la modelo, cierran en la terraza). Se elimina la escena del maletín entregado por la ventana de la versión anterior — el tablero cumple ahora esa función de "disparador de la misión".
+Tercera reescritura de esta pieza — mismo lugar dentro del bloque fijado del Génesis Zamrud (el video narrativo, al medio), pero ahora con una estructura de dos tiempos: un cold open tipo tablero de investigación que plantea el misterio desde afuera (alguien más está buscando a Rovvi y Keni, igual que ellos buscan esmeraldas), y luego la escena en primera persona de siempre (Keni estrena máscara, salen en el carro, recogen a la modelo, cierran en la terraza). Se elimina la escena del maletín entregado por la ventana de la versión anterior — el tablero cumple ahora esa función de "disparador de la misión".
 
 **Locaciones:** insert de tablero (mesa o pared, controlado) → un cuarto/estudio base → carro en movimiento → terraza ya scouteada. **Reparto en cuadro:** Keni, Rovvi (rostro siempre cubierto, sin excepción) y la modelo — el investigador del tablero nunca aparece en cuadro, solo sus manos y su voz. **Duración:** ~65-70 seg. **Cámara:** Sony para el insert del tablero y los planos fijos a contraluz de la terraza, Action 6 para el close-up en cámara lenta de las manos de Keni destapando la caja y poniéndose la máscara, Osmo 360 para los planos de escala.
 
 ## Shot list, de principio a fin
 
-**0:00–0:10 — el tablero de investigación.** Insert cerrado sobre una mesa o pared (no se necesita locación nueva): un corcho con fotos conectadas por hilo. Fotos reales de artistas con los que Sunroot/Sam Root ya ha grabado — solo las de quienes ya dieron permiso de aparecer; cualquier colaborador sin permiso confirmado se representa con el mismo tratamiento de silueta ya usado en el resto de la mitología de marca, nunca con su foto real. Dos espacios dentro de la misma red de hilos llevan signo de interrogación y una etiqueta escrita a mano: **ROVVI** y **KENI** — sin foto. Solo se ven manos (el investigador nunca aparece en cuadro) moviendo fotos y tensando el hilo.
+**0:00–0:10 — el tablero de investigación.** Insert cerrado sobre una mesa o pared (no se necesita locación nueva): un corcho con fotos conectadas por hilo. Fotos reales de artistas con los que Zamrud ya ha grabado — solo las de quienes ya dieron permiso de aparecer; cualquier colaborador sin permiso confirmado se representa con el mismo tratamiento de silueta ya usado en el resto de la mitología de marca, nunca con su foto real. Dos espacios dentro de la misma red de hilos llevan signo de interrogación y una etiqueta escrita a mano: **ROVVI** y **KENI** — sin foto. Solo se ven manos (el investigador nunca aparece en cuadro) moviendo fotos y tensando el hilo.
 > **Investigador** (voz en off, grave): "Todos estos ya grabaron. Pero a estos dos todavía nadie les ha visto la cara. Rovvi. Keni. ¿Dónde están?"
 
 **0:10–0:22 — corte a un cuarto/estudio base.** Keni, sin máscara, destapa una caja — close-up en cámara lenta (Action 6, el mismo recurso de tela en movimiento de Peaky Blinders) a sus manos y a la máscara saliendo de la caja. Rovvi ya está ahí, con su máscara puesta como siempre.
