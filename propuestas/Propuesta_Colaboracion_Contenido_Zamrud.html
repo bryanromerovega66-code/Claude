@@ -1,0 +1,377 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><title>Zamrud</title><style>
+@page{size:A4 landscape;margin:0}
+*{box-sizing:border-box}
+body{margin:0;font-family:'Helvetica Neue',Arial,sans-serif;color:#14201a;font-size:11.5pt;line-height:1.45}
+.page{width:297mm;height:210mm;padding:14mm 16mm;page-break-after:always;position:relative;overflow:hidden;background:#fff}
+.dark{background:#07110d;color:#e8f0eb}
+.brand{font-weight:800;letter-spacing:.18em;color:#0f7a4f;font-size:9.5pt}
+.dark .brand{color:#3ddc97}
+h1{font-size:40pt;line-height:1.05;margin:0 0 6mm;letter-spacing:.02em}
+h2.sec{font-size:22pt;margin:0 0 5mm}
+.sub{font-size:14pt;color:#9fb0a6;margin:0 0 8mm}
+p{margin:0 0 3.5mm}
+.foot{position:absolute;bottom:8mm;left:16mm;right:16mm;font-size:8pt;color:#6b7b72;display:flex;justify-content:space-between}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10mm}
+.card{border:1px solid #d3ddd7;border-radius:3mm;padding:5mm;background:#f4f7f5}
+.card h3{margin:0 0 2mm;font-size:12pt;color:#0f7a4f}
+ul{margin:0;padding-left:5mm} li{margin-bottom:2mm}
+.scenes{align-items:start;display:grid;grid-template-columns:1fr 1fr;gap:9mm;height:170mm}
+.sc{display:flex;gap:5mm;border:1px solid #d3ddd7;border-radius:3mm;padding:4mm;background:#fff}
+.sc .pic{width:62mm;flex:none}
+.sc svg{width:62mm;height:110mm;display:block;border-radius:2mm;background:#000}
+.sc .tx{font-size:9.5pt;line-height:1.35}
+.sc h4{margin:0 0 1mm;font-size:10.5pt;color:#0f7a4f}
+.sc .meta{color:#5b6b62;font-size:8pt;margin-bottom:2.5mm}
+.lab{font-weight:700;font-size:7.5pt;text-transform:uppercase;letter-spacing:.05em;color:#0f7a4f;margin-top:2mm}
+.dlg{background:#e8f6ee;border-left:1.2mm solid #0f7a4f;padding:2mm 3mm;border-radius:1.5mm;margin-top:1mm}
+.note{background:#fff7e0;border-left:1.2mm solid #e0b020;padding:3mm 4mm;border-radius:1.5mm}
+.emer{color:#3ddc97}
+.tag{display:inline-block;background:#0f7a4f;color:#fff;border-radius:99px;padding:.6mm 3mm;font-size:7.5pt;font-weight:700;margin-bottom:1.5mm}
+
+.pop,.pop2,.fadeUp,.thumb{opacity:1}.mdlg{background:#fff3b0;border:0.6mm solid #e0b020;border-left:2mm solid #e0b020;padding:2.5mm 3.5mm;border-radius:1.5mm;margin-top:1.5mm;font-size:11pt;font-weight:700}
+.odlg{background:#f0f0f0;border-left:1.2mm solid #aaa;padding:2mm 3mm;border-radius:1.5mm;margin-top:1.5mm;color:#555}
+.sc.mine{border:0.6mm solid #e0b020;box-shadow:0 0 0 1mm #fff3b0}
+.tag{background:#b07a00}
+.line{font-size:17pt;font-weight:800;background:#fff3b0;border-left:2.5mm solid #e0b020;padding:4mm 6mm;border-radius:2mm;margin-bottom:5mm}
+.line small{display:block;font-size:9pt;font-weight:700;color:#8a6200;letter-spacing:.06em;text-transform:uppercase;margin-bottom:1mm}
+</style></head><body><svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <!-- Organizadora de espaldas (origen: centro de los pies) -->
+      <g id="womanBack">
+        <path d="M-46,-62 Q0,-92 46,-62 L52,60 L-52,60 Z" fill="#0f7a4f"/>
+        <path d="M-36,-150 C-46,-232 46,-232 36,-150 L44,-30 C20,-8 -20,-8 -44,-30 Z" fill="#17100f"/>
+        <path d="M-10,-110 L10,-110 L8,-70 L-8,-70 Z" fill="#c58a5b" opacity=".0"/>
+      </g>
+      <!-- Silueta sin rostro -->
+      <g id="sil">
+        <rect x="-38" y="-80" width="76" height="140" rx="26" fill="#0a0d0c"/>
+        <circle cx="0" cy="-115" r="28" fill="#0a0d0c"/>
+      </g>
+      <!-- Rovvi con rostro -->
+      <g id="rovvi">
+        <rect x="-40" y="-80" width="80" height="140" rx="26" fill="#3b4a44"/>
+        <circle cx="0" cy="-115" r="28" fill="#c58a5b"/>
+        <path d="M-28,-120 Q0,-160 28,-120 Q10,-138 -28,-120 Z" fill="#17100f"/>
+        <circle cx="-9" cy="-114" r="3" fill="#17100f"/><circle cx="9" cy="-114" r="3" fill="#17100f"/>
+        <path d="M-8,-100 Q0,-94 8,-100" stroke="#17100f" stroke-width="2.5" fill="none"/>
+      </g>
+      <!-- Keni 2.0 con máscara -->
+      <g id="keni">
+        <rect x="-40" y="-80" width="80" height="140" rx="26" fill="#111916"/>
+        <circle cx="0" cy="-115" r="28" fill="#0f7a4f"/>
+        <path d="M-26,-124 L26,-124 L22,-100 L0,-92 L-22,-100 Z" fill="#3ddc97"/>
+        <rect x="-18" y="-120" width="12" height="5" rx="2" fill="#07110d"/>
+        <rect x="6" y="-120" width="12" height="5" rx="2" fill="#07110d"/>
+        <g transform="translate(0,-124) scale(.28)"><ellipse rx="12" ry="8" fill="#e0b020"/><circle cx="-7" cy="-7" r="4" fill="#e0b020"/><circle cx="7" cy="-7" r="4" fill="#e0b020"/></g>
+      </g>
+      <!-- Máscara suelta -->
+      <g id="mask">
+        <path d="M-50,-60 L50,-60 L42,20 L0,50 L-42,20 Z" fill="#3ddc97" stroke="#0f7a4f" stroke-width="5"/>
+        <rect x="-34" y="-30" width="26" height="10" rx="4" fill="#07110d"/>
+        <rect x="8" y="-30" width="26" height="10" rx="4" fill="#07110d"/>
+        <g transform="translate(0,-46)">
+          <path d="M-12,4 L-19,11 M12,4 L19,11" stroke="#e0b020" stroke-width="3" stroke-linecap="round"/>
+          <ellipse cx="0" cy="0" rx="12" ry="8" fill="#e0b020" stroke="#8a6200" stroke-width="1.5"/>
+          <circle cx="-7" cy="-7" r="4" fill="#e0b020" stroke="#8a6200" stroke-width="1.2"/><circle cx="7" cy="-7" r="4" fill="#e0b020" stroke="#8a6200" stroke-width="1.2"/>
+          <circle cx="-7" cy="-7" r="1.5" fill="#111"/><circle cx="7" cy="-7" r="1.5" fill="#111"/>
+        </g>
+      </g>
+      <!-- Organizadora de frente, tras un escritorio -->
+      <g id="womanFront">
+        <!-- decoración tipo Airbnb -->
+        <rect x="18" y="60" width="92" height="170" rx="4" fill="#cfe3ee" stroke="#e8e2d6" stroke-width="6"/>
+        <path d="M64,60 L64,230 M18,145 L110,145" stroke="#e8e2d6" stroke-width="4"/>
+        <path d="M4,50 Q30,150 12,250 L-6,250 L-6,50 Z" fill="#c9b79c"/>
+        <path d="M124,50 Q98,150 116,250 L130,250 L130,50 Z" fill="#c9b79c"/>
+        <rect x="250" y="70" width="70" height="52" fill="#101713" stroke="#d8c9a8" stroke-width="5"/>
+        <polygon points="270,112 285,86 300,112" fill="#2fe3a0"/>
+        <rect x="278" y="300" width="44" height="40" rx="6" fill="#8b5e3c"/>
+        <path d="M300,300 Q270,250 262,222 M300,300 Q300,240 300,205 M300,300 Q330,250 340,226" stroke="#2f8f4e" stroke-width="10" stroke-linecap="round" fill="none"/>
+        <path d="M180,0 L180,92" stroke="#222" stroke-width="2"/>
+        <path d="M150,112 Q180,78 210,112 Z" fill="#e0b020"/>
+        <path d="M120,340 Q180,250 240,340 L250,400 L110,400 Z" fill="#0f7a4f"/>
+        <path d="M135,230 C125,150 235,150 225,230 L232,330 L128,330 Z" fill="#17100f"/>
+        <ellipse cx="180" cy="235" rx="34" ry="44" fill="#c58a5b"/>
+        <path d="M148,215 Q180,170 212,215 Q180,195 148,215 Z" fill="#17100f"/>
+        <circle cx="168" cy="235" r="3" fill="#17100f"/><circle cx="192" cy="235" r="3" fill="#17100f"/>
+        <path d="M172,254 Q180,259 188,254" stroke="#7a2e2e" stroke-width="3" fill="none"/>
+        <rect x="30" y="340" width="300" height="24" rx="4" fill="#6b4426"/>
+        <rect x="50" y="364" width="14" height="110" fill="#4a2f18"/><rect x="296" y="364" width="14" height="110" fill="#4a2f18"/>
+      </g>
+      <!-- Rovvi de espaldas: trenzas -->
+      <g id="rovviBack">
+        <rect x="-40" y="-80" width="80" height="140" rx="26" fill="#3b4a44"/>
+        <circle cx="0" cy="-115" r="28" fill="#17100f"/>
+        <g stroke="#17100f" stroke-width="5" stroke-linecap="round" fill="none">
+          <path d="M-22,-105 L-26,-62"/><path d="M-9,-92 L-10,-50"/><path d="M7,-92 L9,-50"/><path d="M22,-105 L27,-62"/>
+        </g>
+      </g>
+      <!-- Keni de espaldas: dreads -->
+      <g id="keniBack">
+        <rect x="-40" y="-80" width="80" height="140" rx="26" fill="#111916"/>
+        <path d="M-30,-118 Q0,-160 30,-118 Q0,-132 -30,-118 Z" fill="#241810"/>
+        <g stroke="#2e1d12" stroke-width="8" stroke-linecap="round" fill="none">
+          <path d="M-26,-120 L-32,-70"/><path d="M-15,-130 L-19,-64"/><path d="M-4,-134 L-5,-60"/>
+          <path d="M7,-134 L9,-60"/><path d="M18,-130 L21,-64"/><path d="M27,-120 L33,-70"/>
+        </g>
+      </g>
+      <clipPath id="rearWin"><rect x="30" y="110" width="300" height="200" rx="14"/></clipPath>
+      <!-- Interior del Niva visto desde el tablero hacia atrás (ciudad por la luneta) -->
+      <g id="carRear">
+        <rect width="360" height="640" fill="#0e1412"/>
+        <rect x="20" y="100" width="320" height="220" rx="18" fill="#05080a"/>
+        <g clip-path="url(#rearWin)">
+          <rect x="30" y="110" width="300" height="200" fill="url(#gDusk)"/>
+          <g transform="translate(0,310)"><use href="#skyline"/></g>
+          <g fill="#ffd27a" opacity=".85"><rect x="60" y="250" width="6" height="8"/><rect x="110" y="230" width="6" height="8"/><rect x="190" y="215" width="6" height="8"/><rect x="250" y="245" width="6" height="8"/><rect x="300" y="200" width="6" height="8"/></g>
+        </g>
+        <rect x="0" y="320" width="360" height="130" fill="#161d1a"/>
+        <rect x="50" y="300" width="70" height="60" rx="12" fill="#1c2622"/><rect x="240" y="300" width="70" height="60" rx="12" fill="#1c2622"/>
+        <rect x="0" y="450" width="360" height="190" fill="#101614"/>
+      </g>
+      <!-- Organizadora en el asiento de atrás -->
+      <g id="orgSeat">
+        <path d="M-34,12 Q0,-14 34,12 L40,90 L-40,90 Z" fill="#0f7a4f"/>
+        <path d="M-26,-30 C-30,-62 30,-62 26,-30 L28,10 L-28,10 Z" fill="#17100f"/>
+        <ellipse cx="0" cy="-22" rx="20" ry="26" fill="#c58a5b"/>
+        <path d="M-22,-34 Q0,-62 22,-34 Q0,-46 -22,-34 Z" fill="#17100f"/>
+        <circle cx="-7" cy="-22" r="2.2" fill="#17100f"/><circle cx="7" cy="-22" r="2.2" fill="#17100f"/>
+        <path d="M-5,-10 Q0,-6 5,-10" stroke="#7a2e2e" stroke-width="2" fill="none"/>
+      </g>
+      <!-- Tarjeta foto -->
+      <g id="photo">
+        <rect width="58" height="70" fill="#f6f3e8" stroke="#222" stroke-width="1.5"/>
+        <circle cx="29" cy="30" r="12" fill="#6b7a73"/>
+        <path d="M8,64 Q29,40 50,64 Z" fill="#6b7a73"/>
+        <circle cx="29" cy="4" r="3.5" fill="#d33"/>
+      </g>
+      <!-- Tarjeta interrogante -->
+      <g id="qcard">
+        <rect width="58" height="70" fill="#050806" stroke="#1f2a24" stroke-width="2"/>
+        <polygon points="14,18 44,18 52,26 52,56 44,64 14,64 6,56 6,26" fill="#14b87a" stroke="#0a7a52" stroke-width="2"/>
+        <polygon points="19,23 39,23 47,30 47,52 39,59 19,59 11,52 11,30" fill="#2fe3a0" opacity=".85"/>
+        <text x="29" y="50" text-anchor="middle" font-size="26" font-weight="900" fill="#04110b">?</text>
+        <circle cx="29" cy="7" r="3.5" fill="#d33"/>
+      </g>
+      <!-- Niva blanco -->
+      <g id="niva">
+        <rect x="0" y="40" width="250" height="70" rx="10" fill="#f2f2ee" stroke="#222" stroke-width="3"/>
+        <path d="M30,40 L50,0 L190,0 L222,40 Z" fill="#f2f2ee" stroke="#222" stroke-width="3"/>
+        <path d="M58,8 L108,8 L108,38 L40,38 Z" fill="#9fd2e8" stroke="#222" stroke-width="2"/>
+        <path d="M116,8 L184,8 L208,38 L116,38 Z" fill="#9fd2e8" stroke="#222" stroke-width="2"/>
+        <rect x="236" y="60" width="16" height="14" rx="3" fill="#ffe27a"/>
+        <circle cx="62" cy="112" r="24" fill="#111" stroke="#555" stroke-width="3"/>
+        <circle cx="198" cy="112" r="24" fill="#111" stroke="#555" stroke-width="3"/>
+      </g>
+      <linearGradient id="gDusk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a1b4a"/><stop offset=".6" stop-color="#e07a1f"/><stop offset="1" stop-color="#ffd27a"/></linearGradient>
+      <linearGradient id="gGold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1c2a5a"/><stop offset=".5" stop-color="#f08a3a"/><stop offset="1" stop-color="#ffd98a"/></linearGradient>
+      <linearGradient id="gNight" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#050a14"/><stop offset="1" stop-color="#16324a"/></linearGradient>
+      <radialGradient id="gDoor" cx=".5" cy=".5" r=".6"><stop offset="0" stop-color="#fff8d8"/><stop offset="1" stop-color="#fff8d8" stop-opacity="0"/></radialGradient>
+      <g id="skyline">
+        <path d="M0,0 L0,-60 L30,-60 L30,-110 L60,-110 L60,-70 L90,-70 L90,-150 L120,-150 L120,-90 L160,-90 L160,-130 L200,-130 L200,-60 L240,-60 L240,-100 L280,-100 L280,-170 L310,-170 L310,-80 L360,-80 L360,0 Z" fill="#070b10"/>
+      </g>
+    </defs>
+  </svg><section class="page dark"><div class="brand">ZAMRUD · BOGOTHAM</div>
+<div style="margin-top:36mm"><div class="sub" style="margin-bottom:4mm">Propuesta de colaboración de contenido</div>
+<h1>MINAR EN <span class="emer">BOGOTHAM</span></h1>
+<p style="font-size:15pt;max-width:200mm;color:#cfe0d6">Queremos que seas la Organizadora: la voz que arma el equipo y sale a buscar las esmeraldas de Bogotá.</p></div>
+<div class="foot" style="color:#9fb0a6"><span>Zamrud · Bogotham</span><span>Para contrataciones</span></div></section><section class="page"><div class="brand">ZAMRUD · BOGOTHAM</div>
+<h2 class="sec" style="margin-top:8mm">Hola, esta es la propuesta</h2>
+<div class="grid2"><div>
+<p style="font-size:13pt">Somos <b>Zamrud</b>, un proyecto que reúne artistas en Bogotá, a la que llamamos <b>Bogotham</b>. Estamos grabando un cortometraje de 60 segundos llamado <b>“Minar en Bogotham”</b> y nos gustaría contar contigo.</p>
+<p style="font-size:13pt">Queremos que interpretes a <b>la Organizadora</b>, el personaje que lidera la historia y es quien habla en casi todo el corto. Vimos tu perfil y esta es la propuesta de trabajo.</p>
+<div class="note">En las páginas siguientes verás el storyboard completo. <b>Marcamos en amarillo lo que dice tu personaje</b>, y en gris lo que dicen los demás, para que lo ubiques rápido.</div></div>
+<div class="card"><h3>La idea en breve</h3><p>En Bogotá hay esmeraldas por minar, y esas esmeraldas son los artistas. La Organizadora arma un equipo (Rovvi y Keni), les da una misión y sale a buscarlas. El corto termina invitando a los artistas a dejar su información.</p><h3 style="margin-top:4mm">Tu personaje</h3><p style="margin:0"><b>La Organizadora.</b> Lidera, decide y convence. Habla con seguridad y un toque de misterio. Está en casi todas las escenas.</p></div></div>
+<div class="foot"><span>Zamrud · Propuesta de colaboración de contenido</span><span>1</span></div></section><section class="page"><div class="brand">ZAMRUD · BOGOTHAM</div>
+<h2 class="sec" style="margin-top:6mm">Tus líneas de un vistazo</h2>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:0 8mm;align-items:start"><div class="line"><small>Escena 3 · La llamada · 8–12 s · Hablas por celular, de perfil.</small>“Necesito un equipo, ya sé quiénes.”</div><div class="line"><small>Escena 5 · La misión · 20–28 s · Hablas mirando a cámara, en la oficina.</small>“Los necesito a ustedes dos. Vamos a minar más esmeraldas en Bogotá… para que Colombia y el mundo vean cuántas hay.”</div><div class="line"><small>Escena 8 · Dentro del Niva · 42–48 s · Respondes a Rovvi, sentada atrás en el medio del carro.</small>“Es porque, aparte de las de Bogotá, acá se reúnen de muchas partes de Colombia.”</div><div class="line"><small>Escena 9 · La terraza · 48–58 s · Hablas mirando al cielo, a hora dorada. La música baja y solo se oye tu voz.</small>“Esas esmeraldas son los artistas de Bogotá. Nuestra misión es ir por cada uno. Prepárense.”</div></div>
+<p style="font-size:10pt;color:#5b6b62">Son 4 intervenciones en total. Es un guion base: el director audiovisual puede ajustar el texto y tú también puedes proponer cómo decirlo con tus palabras. En la escena 1 y 2 apareces sin hablar, y en la 4 miras a cámara en silencio.</p>
+<div class="foot"><span>Zamrud · Propuesta de colaboración de contenido</span><span>2</span></div></section><section class="page"><div class="brand">ZAMRUD · BOGOTHAM</div><div class="scenes" style="margin-top:6mm"><div class="sc"><div class="pic"><svg viewBox="0 0 360 640" role="img" aria-label="Plano 1: tablero de investigador con la Organizadora de espaldas">
+        <rect width="360" height="640" fill="#1c2420"/>
+        <rect x="20" y="50" width="320" height="330" fill="#a9794a" stroke="#5b3d1f" stroke-width="6"/>
+        <path class="thread a" d="M112,95 L180,95 L248,95 L308,160 L308,260 L248,330 L180,330 L112,330 L52,260 L52,160 Z" fill="none" stroke="#d33" stroke-width="2.5" stroke-linejoin="round"/>
+        <path class="thread a" d="M112,95 L308,260" fill="none" stroke="#d33" stroke-width="1.6"/>
+        <path class="thread a" d="M248,95 L52,260" fill="none" stroke="#d33" stroke-width="1.6"/>
+        <path class="thread a" d="M308,160 L112,330" fill="none" stroke="#d33" stroke-width="1.6"/>
+        <path class="thread a" d="M52,160 L248,330" fill="none" stroke="#d33" stroke-width="1.6"/>
+        <use href="#photo" x="83" y="60"/><use href="#qcard" x="151" y="60"/><use href="#photo" x="219" y="60"/>
+        <use href="#qcard" x="279" y="125"/><use href="#photo" x="279" y="225"/>
+        <use href="#qcard" x="219" y="295"/><use href="#photo" x="151" y="295"/><use href="#qcard" x="83" y="295"/>
+        <use href="#photo" x="23" y="225"/><use href="#qcard" x="23" y="125"/>
+        <g transform="translate(180,750) scale(1.55)"><use href="#womanBack"/></g>
+        <text x="180" y="26" text-anchor="middle" font-size="13" fill="#3ddc97" font-weight="700">ZAMRUD · BOGOTHAM</text>
+      </svg></div><div class="tx"><h4>1 · Tablero · Oficina, Airbnb interior</h4><div class="meta">0–4 s · Plano cerrado de espaldas</div><div class="lab">Acción</div><div>Cabello y torso de la Organizadora frente a un tablero normal: 5 fotos autorizadas y 5 interrogantes (en esmeralda) puestos de forma que, al unirlos con el hilo rojo, dibujan el <b>croquis de una esmeralda</b>.</div><div class="lab">Sonido</div><div>Sintetizador grave. Texto “Zamrud · Bogotham”.</div></div></div><div class="sc"><div class="pic"><svg viewBox="0 0 360 640" role="img" aria-label="Plano 2: detalle de la mano tocando una carta con interrogante">
+        <rect width="360" height="640" fill="#1c2420"/>
+        <rect x="-10" y="120" width="380" height="380" fill="#a9794a"/>
+        <g class="qpulse a"><g transform="translate(80,170) scale(3.4)"><use href="#qcard"/></g></g>
+        <path d="M30,0 L110,200" stroke="#d33" stroke-width="5"/>
+        <g class="handMove a">
+          <path d="M360,420 L250,400 Q215,395 200,370 L190,300 Q186,280 204,282 Q216,285 220,300 L226,330 L236,262 Q240,246 252,250 Q264,254 262,268 L258,332 L276,276 Q284,264 294,270 Q304,276 298,290 L290,340 L360,340 Z" fill="#c58a5b" stroke="#6b4426" stroke-width="3"/>
+        </g>
+        <text x="180" y="570" text-anchor="middle" font-size="16" font-weight="700" fill="#fff">Faltan más artistas…</text>
+        <text x="180" y="596" text-anchor="middle" font-size="14" fill="#3ddc97">empezamos con 5 a 10</text>
+      </svg></div><div class="tx"><h4>2 · El interrogante · Oficina, Airbnb interior</h4><div class="meta">4–8 s · Plano detalle</div><div class="lab">Acción</div><div>Su mano toca una foto y luego un “?”. Se detiene a pensar: no es uno solo, vamos por <b>más artistas</b>.</div><div class="lab">Sonido</div><div>Latido grave que crece.</div></div></div></div><div class="foot"><span>Zamrud · Propuesta de colaboración de contenido</span><span>Storyboard · escenas 1–2</span></div></section><section class="page"><div class="brand">ZAMRUD · BOGOTHAM</div><div class="scenes" style="margin-top:6mm"><div class="sc mine"><div class="pic"><svg viewBox="0 0 360 640" role="img" aria-label="Plano 3: la Organizadora de perfil llamando por celular">
+        <rect width="360" height="640" fill="#26302b"/>
+        <rect x="0" y="420" width="360" height="220" fill="#1a211d"/>
+        <path d="M120,640 L130,420 Q180,380 240,420 L250,640 Z" fill="#0f7a4f"/>
+        <path d="M130,420 L140,300 Q130,200 190,190 Q255,190 242,310 L230,420 Q180,380 130,420 Z" fill="#17100f"/>
+        <ellipse cx="205" cy="290" rx="40" ry="52" fill="#c58a5b"/>
+        <path d="M150,280 Q170,190 240,230 Q255,260 235,300 Q215,240 150,280 Z" fill="#17100f"/>
+        <g class="phoneUp a"><rect x="222" y="260" width="22" height="48" rx="5" fill="#cfd8d3" stroke="#222" stroke-width="2.5" transform="rotate(12 233 284)"/></g>
+        <g class="pop a"><rect x="30" y="70" width="300" height="86" rx="22" fill="#fff"/><path d="M200,156 L230,200 L240,156 Z" fill="#fff"/>
+        <text x="180" y="108" text-anchor="middle" font-size="18" font-weight="700" fill="#111">“Necesito un equipo,</text>
+        <text x="180" y="136" text-anchor="middle" font-size="18" font-weight="700" fill="#111">ya sé quiénes.”</text></g>
+      </svg></div><div class="tx"><h4>3 · La llamada · Oficina, Airbnb interior</h4><div class="meta">8–12 s · Plano medio de lado</div><div class="lab">Diálogo</div><div class="mdlg"><span class="tag">TU LÍNEA</span><br>ORGANIZADORA: “Necesito un equipo, ya sé quiénes.”</div><div class="lab">Sonido</div><div>Clic del celular.</div></div></div><div class="sc"><div class="pic"><svg viewBox="0 0 360 640" role="img" aria-label="Plano 4: la Organizadora mira a cámara y Rovvi y Keni caminan hacia ella, de espaldas">
+        <rect width="360" height="640" fill="#1c2420"/>
+        <circle class="glow a" cx="180" cy="260" r="210" fill="url(#gDoor)" opacity=".5"/>
+        <rect x="0" y="450" width="360" height="190" fill="#0f1411"/>
+        <use href="#womanFront"/>
+        <g class="awayL a"><g transform="translate(115,690) scale(1.5)"><use href="#rovviBack"/></g></g>
+        <g class="awayR a"><g transform="translate(250,690) scale(1.5)"><use href="#keniBack"/></g></g>
+        <text x="180" y="40" text-anchor="middle" font-size="20" font-weight="800" fill="#fff">LA CITA</text>
+      </svg></div><div class="tx"><h4>4 · La cita · Oficina, Airbnb interior</h4><div class="meta">12–20 s · Plano frontal, cámara tras ellos</div><div class="lab">Acción</div><div>Apenas arranca la toma, la <b>Organizadora está en un escritorio mirando a cámara</b>. Rovvi y Keni entran caminando hacia ella, de espaldas: solo se ven las <b>trenzas de Rovvi</b> y los <b>dreads de Keni</b>.</div><div class="lab">Texto</div><div>“La cita”.</div></div></div></div><div class="foot"><span>Zamrud · Propuesta de colaboración de contenido</span><span>Storyboard · escenas 3–4</span></div></section><section class="page"><div class="brand">ZAMRUD · BOGOTHAM</div><div class="scenes" style="margin-top:6mm"><div class="sc mine"><div class="pic"><svg viewBox="0 0 360 640" role="img" aria-label="Plano 5: la Organizadora explica la misión">
+        <rect width="360" height="640" fill="#1c2420"/>
+        <rect x="0" y="470" width="360" height="170" fill="#0f1411"/>
+        <use href="#womanFront" y="120"/>
+        <g transform="translate(115,740) scale(1.6)"><use href="#rovviBack"/></g>
+        <g class="tilt a"><g transform="translate(250,740) scale(1.6)"><use href="#keniBack"/></g></g>
+        <g class="pop a"><rect x="20" y="60" width="320" height="130" rx="24" fill="#fff"/><path d="M90,190 L110,235 L130,190 Z" fill="#fff"/>
+        <text x="180" y="95" text-anchor="middle" font-size="17" font-weight="700" fill="#111">“Los necesito a ustedes dos.</text>
+        <text x="180" y="122" text-anchor="middle" font-size="17" font-weight="700" fill="#111">Vamos a minar más esmeraldas</text>
+        <text x="180" y="149" text-anchor="middle" font-size="17" font-weight="700" fill="#111">en Bogotá… para que Colombia</text>
+        <text x="180" y="176" text-anchor="middle" font-size="17" font-weight="700" fill="#111">y el mundo vean cuántas hay.”</text></g>
+      </svg></div><div class="tx"><h4>5 · La misión · Oficina, Airbnb interior</h4><div class="meta">20–28 s · Plano de dos</div><div class="lab">Diálogo</div><div class="mdlg"><span class="tag">TU LÍNEA</span><br>ORGANIZADORA: “Los necesito a ustedes dos. Vamos a minar más esmeraldas en Bogotá… para que Colombia y el mundo vean cuántas hay.”</div><div class="lab">Acción</div><div>Ella habla mirando a cámara; Rovvi y Keni de espaldas en primer plano. Rovvi asiente, Keni inclina la cabeza.</div></div></div><div class="sc"><div class="pic"><svg viewBox="0 0 360 640" role="img" aria-label="Plano 6: la máscara pasa a manos de Keni y se la pone">
+        <rect width="360" height="640" fill="#1c2420"/>
+        <rect x="0" y="0" width="360" height="640" fill="#0b110e" opacity=".5"/>
+        <g class="zoomMask">
+        <g transform="translate(180,220)"><circle cx="0" cy="0" r="70" fill="#111916"/><rect x="-85" y="60" width="170" height="260" rx="60" fill="#111916"/></g>
+        <path d="M70,640 Q60,540 120,500 L180,480 L170,640 Z" fill="#c58a5b" stroke="#6b4426" stroke-width="3"/>
+        <path d="M290,640 Q300,540 240,500 L180,480 L190,640 Z" fill="#c58a5b" stroke="#6b4426" stroke-width="3"/>
+        <g class="maskUp a"><g transform="translate(180,520) scale(1.3)"><use href="#mask"/></g></g>
+        <text x="180" y="36" text-anchor="middle" font-size="18" font-weight="800" fill="#3ddc97">KENI 2.0</text>
+        </g>
+        <rect class="fillOut" width="360" height="640" fill="#e0b020" opacity="0"/>
+      </svg></div><div class="tx"><h4>6 · La máscara · Oficina, Airbnb interior</h4><div class="meta">28–32 s · Primer plano de manos y zoom in a la rana</div><div class="lab">Acción</div><div>Ella le entrega la máscara personalizada. Keni la sostiene un segundo y se la pone. En el entrecejo de la máscara hay una <b>rana dorada</b>.</div><div class="lab">Sonido</div><div>Golpe de bajo. <b>Zoom in a la rana dorada</b> hasta llenar el cuadro → continúa en 7A.</div></div></div></div><div class="foot"><span>Zamrud · Propuesta de colaboración de contenido</span><span>Storyboard · escenas 5–6</span></div></section><section class="page"><div class="brand">ZAMRUD · BOGOTHAM</div><div class="scenes" style="margin-top:6mm"><div class="sc"><div class="pic"><svg viewBox="0 0 360 640" role="img" aria-label="Plano 7A: dentro del Niva, zoom out desde la rana dorada de la máscara de Keni; se ve a Rovvi al lado">
+        <rect width="360" height="640" fill="#0b110e"/>
+        <g class="pullBack">
+          <use href="#carRear"/>
+          <g transform="translate(178,425) scale(1.4)"><use href="#orgSeat"/></g>
+          <g transform="translate(100,610) scale(2.0)"><use href="#rovvi"/></g>
+          <g transform="translate(255,610) scale(2.2)"><use href="#keni"/></g>
+          <circle cx="255" cy="565" r="56" fill="none" stroke="#1d2420" stroke-width="13"/>
+        </g>
+        <rect class="flash" width="360" height="640" fill="#fff" opacity="0"/>
+        <text x="180" y="30" text-anchor="middle" font-size="13" fill="#fff">🎧 TECHNO</text>
+      </svg></div><div class="tx"><h4>7A · Dentro del Niva · Calle, Bogotá</h4><div class="meta">32–35 s · Interior, zoom out desde la rana de la máscara</div><div class="lab">Acción</div><div>Continúa el zoom in de la rana dorada: ahora <b>zoom out</b> desde la rana. Ya están dentro del carro: <b>Keni maneja</b> y <b>Rovvi aparece al lado con la cara visible</b>. <b>La Organizadora va en el asiento de atrás, en el medio de los dos.</b> Detrás se ve el interior trasero del carro y Bogotá por la luneta, no la carretera.</div><div class="lab">Sonido</div><div>Techno desde el primer segundo.</div></div></div><div class="sc"><div class="pic"><svg viewBox="0 0 360 640" role="img" aria-label="Plano 7B: tercera persona desde atrás del Niva blanco rodando por Bogotá, estilo Grand Theft Auto 6">
+        <rect width="360" height="640" fill="url(#gDusk)"/>
+        <g transform="translate(0,300)"><use href="#skyline"/></g>
+        <rect x="0" y="300" width="360" height="340" fill="#1f2421"/>
+        <polygon points="0,60 130,215 130,345 0,470" fill="#1a1530"/>
+        <polygon points="0,170 100,250 100,340 0,420" fill="#241c40"/>
+        <polygon points="360,40 230,215 230,345 360,470" fill="#1a1530"/>
+        <polygon points="360,150 260,250 260,340 360,420" fill="#241c40"/>
+        <g fill="#ffd27a" opacity=".85">
+          <rect x="20" y="150" width="10" height="14"/><rect x="50" y="175" width="10" height="14"/><rect x="80" y="200" width="10" height="14"/>
+          <rect x="25" y="260" width="10" height="14"/><rect x="55" y="285" width="10" height="14"/><rect x="85" y="305" width="10" height="14"/>
+          <rect x="330" y="140" width="10" height="14"/><rect x="300" y="165" width="10" height="14"/><rect x="270" y="190" width="10" height="14"/>
+          <rect x="325" y="250" width="10" height="14"/><rect x="295" y="275" width="10" height="14"/><rect x="265" y="300" width="10" height="14"/>
+        </g>
+        <polygon points="150,300 210,300 360,640 0,640" fill="#2a2f2c"/>
+        <g class="roadLines a" fill="#ffd27a"><rect x="178" y="320" width="4" height="14"/><rect x="176" y="360" width="8" height="24"/><rect x="173" y="420" width="14" height="40"/><rect x="168" y="510" width="24" height="70"/></g>
+        <g class="bob a"><g transform="translate(110,420)">
+          <rect x="0" y="40" width="220" height="100" rx="14" fill="#f2f2ee" stroke="#222" stroke-width="3"/>
+          <path d="M20,40 L35,0 L185,0 L200,40 Z" fill="#f2f2ee" stroke="#222" stroke-width="3"/>
+          <path d="M42,8 L178,8 L190,36 L30,36 Z" fill="#243845"/>
+          <rect x="6" y="62" width="28" height="30" rx="4" fill="#d33"/><rect x="186" y="62" width="28" height="30" rx="4" fill="#d33"/>
+          <rect x="82" y="96" width="56" height="22" rx="3" fill="#fff" stroke="#222" stroke-width="2"/>
+          <rect x="0" y="122" width="220" height="18" rx="6" fill="#cfcfc8" stroke="#222" stroke-width="2"/>
+          <rect x="14" y="136" width="40" height="18" rx="4" fill="#111"/><rect x="166" y="136" width="40" height="18" rx="4" fill="#111"/>
+        </g></g>
+        <!-- HUD estilo GTA 6 -->
+        <g font-family="system-ui, Segoe UI, sans-serif">
+          <!-- arriba izquierda: vida, resistencia, foco -->
+          <g>
+            <text x="16" y="26" font-size="11" font-weight="800" fill="#fff" stroke="#000" stroke-width="2.5" paint-order="stroke">❤</text>
+            <rect x="34" y="17" width="130" height="10" rx="3" fill="#111" stroke="#fff" stroke-width="1.5"/><rect x="36" y="19" width="104" height="6" rx="2" fill="#e5484d"/>
+            <text x="16" y="44" font-size="11" font-weight="800" fill="#fff" stroke="#000" stroke-width="2.5" paint-order="stroke">⚡</text>
+            <rect x="34" y="35" width="110" height="8" rx="3" fill="#111" stroke="#fff" stroke-width="1.5"/><rect x="36" y="37" width="84" height="4" rx="2" fill="#f5c542"/>
+            <text x="16" y="60" font-size="11" font-weight="800" fill="#fff" stroke="#000" stroke-width="2.5" paint-order="stroke">◎</text>
+            <rect x="34" y="51" width="90" height="8" rx="3" fill="#111" stroke="#fff" stroke-width="1.5"/><rect x="36" y="53" width="60" height="4" rx="2" fill="#4aa3ff"/>
+            <text x="16" y="82" font-size="10" font-weight="700" fill="#fff" stroke="#000" stroke-width="2.5" paint-order="stroke">🎧 Techno · Car Sessions</text>
+          </g>
+          <!-- arriba derecha: dinero, estrellas, esmeraldas -->
+          <g text-anchor="end">
+            <text x="346" y="36" font-size="22" font-weight="900" fill="#7ee07e" stroke="#000" stroke-width="4" paint-order="stroke">$ 1.000.000</text>
+            <text x="346" y="66" font-size="20" fill="#fff" stroke="#000" stroke-width="3" paint-order="stroke" opacity=".85">☆ ☆ ☆ ☆ ☆</text>
+            <text x="346" y="88" font-size="12" font-weight="800" fill="#3ddc97" stroke="#000" stroke-width="3" paint-order="stroke">💎 0 / 10 esmeraldas</text>
+          </g>
+          <!-- abajo izquierda: minimapa tipo GPS -->
+          <g>
+            <rect x="12" y="520" width="104" height="104" rx="22" fill="#12261c" stroke="#fff" stroke-width="3"/>
+            <g stroke="#3b4a44" stroke-width="5" fill="none"><path d="M12,560 L116,560"/><path d="M12,595 L116,595"/><path d="M48,520 L48,624"/><path d="M86,520 L86,624"/></g>
+            <path d="M60,612 L60,595 L86,595 L86,560 L98,548" stroke="#3ddc97" stroke-width="4" fill="none" stroke-linejoin="round"/>
+            <polygon points="60,598 55,610 65,610" fill="#fff" stroke="#000" stroke-width="1"/>
+            <polygon points="98,538 104,548 98,558 92,548" fill="#2fe3a0" stroke="#0a7a52" stroke-width="1.5"/>
+            <text x="64" y="636" text-anchor="middle" font-size="10" font-weight="800" fill="#fff" stroke="#000" stroke-width="2.5" paint-order="stroke">BOGOTÁ · 850 m</text>
+          </g>
+          <!-- abajo: objetivo -->
+          <rect x="128" y="596" width="220" height="32" rx="6" fill="#000" opacity=".6"/>
+          <text x="238" y="610" text-anchor="middle" font-size="9" font-weight="800" fill="#3ddc97">OBJETIVO</text>
+          <text x="238" y="623" text-anchor="middle" font-size="13" font-weight="700" fill="#fff">Minar esmeraldas</text>
+        </g>
+      </svg></div><div class="tx"><h4>7B · El Niva en Bogotá · Calle, estilo GTA 6</h4><div class="meta">35–42 s · Tercera persona, cámara detrás del carro</div><div class="lab">Acción</div><div>Se ve en <b>tercera persona la parte de atrás del Niva blanco</b>, como en Grand Theft Auto 6, rodando por Bogotá entre edificios. Interfaz tipo GTA 6: <b>barras de vida, resistencia y foco</b> arriba a la izquierda; <b>dinero y estrellas de búsqueda</b> (vacías: nadie nos persigue) arriba a la derecha; <b>minimapa tipo GPS</b> abajo a la izquierda con ruta y distancia; objetivo “Minar esmeraldas” abajo. Es otro de los pilares del proyecto Génesis.</div><div class="lab">Sonido</div><div>Techno (apertura oficial de las Car Sessions).</div></div></div></div><div class="foot"><span>Zamrud · Propuesta de colaboración de contenido</span><span>Storyboard · escenas 7A–7B</span></div></section><section class="page"><div class="brand">ZAMRUD · BOGOTHAM</div><div class="scenes" style="margin-top:6mm"><div class="sc mine"><div class="pic"><svg viewBox="0 0 360 640" role="img" aria-label="Plano 8: dentro del Niva, Rovvi habla y Keni gesticula">
+        <use href="#carRear"/>
+        <g transform="translate(180,475) scale(1.5)"><use href="#orgSeat"/></g>
+        <g transform="translate(95,630) scale(1.7)"><use href="#rovvi"/></g>
+        <g transform="translate(265,630) scale(1.7)"><use href="#keni"/></g>
+        <circle cx="265" cy="595" r="48" fill="none" stroke="#1d2420" stroke-width="12"/>
+        <g class="thumb a"><text x="265" y="405" font-size="46" text-anchor="middle">👍</text></g>
+        <g class="pop a"><rect x="20" y="60" width="250" height="100" rx="20" fill="#fff"/><path d="M80,160 L95,215 L115,160 Z" fill="#fff"/>
+        <text x="145" y="92" text-anchor="middle" font-size="14" font-weight="700" fill="#111">“Dicen que acá hay más</text>
+        <text x="145" y="114" text-anchor="middle" font-size="14" font-weight="700" fill="#111">esmeraldas de las que</text>
+        <text x="145" y="136" text-anchor="middle" font-size="14" font-weight="700" fill="#111">imaginamos.”</text></g>
+        <g class="pop2 a"><rect x="118" y="172" width="228" height="100" rx="20" fill="#e8fff3"/><path d="M200,272 L190,330 L226,272 Z" fill="#e8fff3"/>
+        <text x="232" y="197" text-anchor="middle" font-size="13" font-weight="700" fill="#111">“Es porque, aparte de las</text>
+        <text x="232" y="217" text-anchor="middle" font-size="13" font-weight="700" fill="#111">de Bogotá, acá se reúnen</text>
+        <text x="232" y="237" text-anchor="middle" font-size="13" font-weight="700" fill="#111">de muchas partes</text>
+        <text x="232" y="257" text-anchor="middle" font-size="13" font-weight="700" fill="#0f7a4f">de Colombia.”</text></g>
+        <g class="fadeUp a"><rect x="20" y="16" width="200" height="34" rx="6" fill="#0f7a4f"/><text x="120" y="39" text-anchor="middle" font-size="14" font-weight="800" fill="#fff">Misión: minar esmeraldas</text></g>
+      </svg></div><div class="tx"><h4>8 · Dentro del Niva · Calle, Bogotá</h4><div class="meta">42–48 s · Interior</div><div class="lab">Diálogo</div><div class="odlg">ROVVI: “Dicen que acá hay más esmeraldas de las que imaginamos.”<br></div><div class="mdlg"><span class="tag">TU LÍNEA</span><br>ORGANIZADORA: “Es porque, aparte de las de Bogotá, acá se reúnen de muchas partes de Colombia.”</div><div class="lab">Acción</div><div>Keni responde solo con un gesto (pulgar arriba / mira a cámara). La Organizadora va atrás, en el medio. Bogotá se ve por la luneta trasera.</div><div class="lab">Texto</div><div>“Misión: minar esmeraldas”.</div></div></div><div class="sc"><div class="pic"><svg viewBox="0 0 360 640" role="img" aria-label="Plano 9: los tres en la terraza, la Organizadora mira al cielo">
+        <rect width="360" height="640" fill="url(#gGold)"/>
+        <circle class="glow a" cx="260" cy="330" r="60" fill="#ffe9a8"/>
+        <g transform="translate(0,470)"><use href="#skyline"/></g>
+        <rect x="0" y="470" width="360" height="170" fill="#0c0f0e"/>
+        <rect x="0" y="466" width="360" height="8" fill="#3a3f3c"/>
+        <g transform="translate(120,640) scale(1.5)"><use href="#womanBack"/></g>
+        <g transform="translate(240,610) scale(1.2)"><use href="#rovvi"/></g>
+        <g transform="translate(320,610) scale(1.2)"><use href="#keni"/></g>
+        <g class="pop a"><rect x="14" y="40" width="332" height="140" rx="24" fill="#fff"/><path d="M110,180 L130,230 L150,180 Z" fill="#fff"/>
+        <text x="180" y="76" text-anchor="middle" font-size="15" font-weight="700" fill="#111">“Esas esmeraldas son los artistas</text>
+        <text x="180" y="102" text-anchor="middle" font-size="15" font-weight="700" fill="#111">de Bogotá. Nuestra misión es</text>
+        <text x="180" y="128" text-anchor="middle" font-size="15" font-weight="700" fill="#111">ir por cada uno.</text>
+        <text x="180" y="156" text-anchor="middle" font-size="15" font-weight="800" fill="#0f7a4f">Prepárense.”</text></g>
+      </svg></div><div class="tx"><h4>9 · La terraza · Terraza, Airbnb exterior</h4><div class="meta">48–58 s · Hora dorada</div><div class="lab">Diálogo</div><div class="odlg">ORGANIZADORA (mirando al cielo): “Esas esmeraldas son los artistas de Bogotá. Nuestra misión es ir por cada uno. Prepárense.”</div><div class="lab">Sonido</div><div>La música baja; solo ambiente y voz.</div></div></div></div><div class="foot"><span>Zamrud · Propuesta de colaboración de contenido</span><span>Storyboard · escenas 8–9</span></div></section><section class="page"><div class="brand">ZAMRUD · BOGOTHAM</div><div class="scenes" style="margin-top:6mm"><div class="sc"><div class="pic"><svg viewBox="0 0 360 640" role="img" aria-label="Plano 10: los tres de espaldas mirando la ciudad, llamado a la acción">
+        <rect width="360" height="640" fill="url(#gNight)"/>
+        <g class="glow a"><circle cx="60" cy="90" r="2" fill="#fff"/><circle cx="130" cy="60" r="2" fill="#fff"/><circle cx="220" cy="110" r="2" fill="#fff"/><circle cx="300" cy="70" r="2" fill="#fff"/><circle cx="270" cy="170" r="2" fill="#3ddc97"/></g>
+        <g transform="translate(0,520)"><use href="#skyline"/></g>
+        <rect x="0" y="520" width="360" height="120" fill="#06090a"/>
+        <g transform="translate(180,700) scale(1.4)"><use href="#womanBack"/></g>
+        <g transform="translate(80,690) scale(1.0)"><use href="#sil"/></g>
+        <g transform="translate(280,690) scale(1.0)"><use href="#sil"/></g>
+        <g class="fadeUp a">
+          <text x="180" y="190" text-anchor="middle" font-size="34" font-weight="900" fill="#3ddc97">ZAMRUD</text>
+          <text x="180" y="224" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">¿Eres una de esas esmeraldas</text>
+          <text x="180" y="248" text-anchor="middle" font-size="17" font-weight="700" fill="#fff">que estamos buscando?</text>
+          <text x="180" y="286" text-anchor="middle" font-size="13" font-weight="600" fill="#cfe9dc">Déjanos tu info si tienes</text>
+          <text x="180" y="306" text-anchor="middle" font-size="13" font-weight="600" fill="#cfe9dc">con qué ser el próximo.</text>
+          <rect x="70" y="326" width="220" height="40" rx="20" fill="#0f7a4f"/>
+          <text x="180" y="352" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">📋 Llena el formulario</text>
+        </g>
+      </svg></div><div class="tx"><h4>10 · Llamado a la acción · Terraza, Airbnb exterior</h4><div class="meta">58–60 s · De espaldas, plano general</div><div class="lab">Acción</div><div>Los tres miran la ciudad. Fin.</div><div class="lab">Texto</div><div><b>“¿Eres una de esas esmeraldas que estamos buscando? Déjanos tu info si tienes con qué ser el próximo.”</b></div></div></div></div><div class="foot"><span>Zamrud · Propuesta de colaboración de contenido</span><span>Storyboard · escenas 10–10</span></div></section><section class="page"><div class="brand">ZAMRUD · BOGOTHAM</div>
+<h2 class="sec" style="margin-top:8mm">Detalles de la colaboración</h2>
+<div class="grid2"><div class="card"><h3>Lo que incluye tu participación</h3><ul><li>Interpretar a la Organizadora y decir sus diálogos.</li><li>Grabación en oficina, interior de un Niva blanco y una terraza.</li><li>Publicación del contenido en las redes de Zamrud.</li></ul>
+<p style="margin-top:3mm"><b>Fechas, locaciones y horarios de grabación:</b> por definir.</p></div>
+<div class="card"><h3>Lo que queremos saber de ti</h3><ul><li>Tu tarifa por esta colaboración y qué incluye.</li><li>Tu disponibilidad en las próximas semanas.</li><li>Condiciones de uso de imagen que manejes.</li><li>Cualquier ajuste al personaje o a los diálogos que quieras proponer.</li></ul></div></div>
+<div class="note" style="margin-top:7mm"><b>Contacto:</b> Zamrud · Bogotham &nbsp;|&nbsp; [correo] &nbsp;|&nbsp; [WhatsApp]</div>
+<p style="margin-top:8mm;font-size:13pt">Gracias por tu tiempo. Nos encantaría construir esto contigo.<br><b>Equipo Zamrud</b></p>
+<div class="foot"><span>Zamrud · Propuesta de colaboración de contenido</span><span>Fin</span></div></section></body></html>
